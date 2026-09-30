@@ -1,0 +1,270 @@
+# ============================================================
+
+# SID-RUMBEA
+
+# Git ignore configuration
+
+# ============================================================
+
+# ------------------------------------------------------------
+
+# Operating System
+
+# ------------------------------------------------------------
+
+# macOS
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# Linux
+
+*~
+.directory
+
+# ------------------------------------------------------------
+
+# IDEs and Editors
+
+# ------------------------------------------------------------
+
+# Visual Studio Code
+
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# IntelliJ IDEA / JetBrains
+
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+
+.classpath
+.project
+.settings/
+
+# NetBeans
+
+/nbproject/private/
+/nbbuild/
+/dist/
+/.nb-gradle/
+
+# ------------------------------------------------------------
+
+# Temporary files
+
+# ------------------------------------------------------------
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.backup
+*.old
+*.orig
+*.log
+
+# Temporary folders
+
+tmp/
+temp/
+.tmp/
+
+# ------------------------------------------------------------
+
+# Build / compiled files
+
+# ------------------------------------------------------------
+
+*.class
+*.jar
+*.war
+*.ear
+
+bin/
+out/
+build/
+target/
+
+# ------------------------------------------------------------
+
+# Java
+
+# ------------------------------------------------------------
+
+hs_err_pid*
+
+# Maven
+
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ------------------------------------------------------------
+
+# Oracle / SQL Developer
+
+# ------------------------------------------------------------
+
+# SQL Developer user configuration
+
+.sqldeveloper/
+
+# SQL Developer system files
+
+system*/
+
+# Oracle SQL Developer Data Modeler temporary/user files
+
+.datamodeler/
+*.log
+
+# Data Modeler generated temporary files
+
+*.dmp
+*.tmp
+
+# Oracle wallet / local credentials
+
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# DO NOT ignore actual Data Modeler project files.
+
+# Keep .dmd/.xml/.csv/etc. when they are part of the project.
+
+# ------------------------------------------------------------
+
+# Database local files
+
+# ------------------------------------------------------------
+
+# Local database files
+
+*.db
+*.sqlite
+*.sqlite3
+
+# Oracle local files / exports
+
+*.dmp
+*.dbf
+*.ora
+
+# ------------------------------------------------------------
+
+# Generated documentation
+
+# ------------------------------------------------------------
+
+# Temporary PDF files
+
+*.temp.pdf
+*.tmp.pdf
+
+# Office temporary files
+
+~$*.doc
+~$*.docx
+~$*.xls
+~$*.xlsx
+~$*.ppt
+~$*.pptx
+
+# ------------------------------------------------------------
+
+# Archives
+
+# ------------------------------------------------------------
+
+# Ignore generic archives only when they are temporary.
+
+# Do NOT ignore project source ZIP files automatically.
+
+# ------------------------------------------------------------
+
+# Credentials and environment variables
+
+# ------------------------------------------------------------
+
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+
+# Oracle connection configuration containing credentials
+
+tnsnames.ora
+sqlnet.ora
+
+# ------------------------------------------------------------
+
+# Node.js (if used later)
+
+# ------------------------------------------------------------
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.npm/
+.yarn/
+.pnpm-store/
+
+# ------------------------------------------------------------
+
+# Python (if used for auxiliary scripts)
+
+# ------------------------------------------------------------
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+env/
+
+.pytest_cache/
+.mypy_cache/
+
+# ------------------------------------------------------------
+
+# Jupyter
+
+# ------------------------------------------------------------
+
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------
+
+# OS / editor leftovers
+
+# ------------------------------------------------------------
+
+*.orig
+*.rej
+*.crdownload
+*.part
+*.swp
+*.swo
+EOF
