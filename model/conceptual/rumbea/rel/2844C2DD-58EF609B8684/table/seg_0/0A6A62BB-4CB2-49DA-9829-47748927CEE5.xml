@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0A6A62BB-4CB2-49DA-9829-47748927CEE5" name="EVENT">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>DD176CBE-D34E-3AD0-09B5-757667F09DFA</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDDLTransformationScript>true</useDDLTransformationScript>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="A98FECC2-A64A-90CC-F08A-550544132B2F">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>B07A72B0-AFFA-1939-3D59-30313582B032</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="29966DCB-46A1-7BFC-8D05-7AE08194E4E9">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>0912666E-8E72-C608-5ADA-227BE7D8FCA1</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="realizationDate" id="3E98FBA2-773F-FD4D-4926-40894A478CA8">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>6881C8F0-9E8F-2C8A-6FCF-FE6060E726A3</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="899622B6-2110-79F6-5F17-8D488114C7E0">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>2D696F83-193E-413E-1B3C-F9149E6685AB</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="specialCover" id="4F46B306-35C9-E5BA-09CC-F15884CC1C98">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>72A0B6C9-F97C-0C7E-1D53-BCA00969629B</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EVENT_ID" id="C73C1DCE-7FA7-A9E5-F42D-12A7EDB8D3B1">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EAF142FE-0C94-7AA5-A694-1E1F75F48ABD" name="EVENT_PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="C73C1DCE-7FA7-A9E5-F42D-12A7EDB8D3B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E10CE8AA-98CD-D56F-B577-49722F878DDA" name="EVENT_id_UN">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:16:55 UTC</createdTime>
+<generatorID>8677A711-75D0-F203-8E91-EBF86F65D051</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A98FECC2-A64A-90CC-F08A-550544132B2F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

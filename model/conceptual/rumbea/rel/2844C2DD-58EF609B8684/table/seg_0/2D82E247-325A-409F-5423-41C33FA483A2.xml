@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2D82E247-325A-409F-5423-41C33FA483A2" name="ESTABLISHMENT_OWNER">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>085201EC-23B7-EF4F-1F84-24771E31C955</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDDLTransformationScript>true</useDDLTransformationScript>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="3C4DFCA5-0576-42D4-9C18-2F1FAEBE8C83">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>35BB6EDA-2FBE-4375-9DC8-DFACBEBAB355</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CAA38BEE-12D4-A234-AAFD-C1014D290006" referredColumn="7C21316C-2901-F473-1CE0-7E48FCA868A6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0881195B-1A2B-360E-1302-8DA1DD90377A" name="ESTABLISHMENT_OWNER_PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>E130EDE5-9141-6FF9-2637-2EF5A13CFE4D</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3C4DFCA5-0576-42D4-9C18-2F1FAEBE8C83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="23CF4FF2-032C-F061-ECBA-D9D535E776F1" name="ESTABLISHMENT_OWNER_PKv1">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>9F090206-22D9-D64F-CFC7-99BD70C5B3AD</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="92CAAA69-1BF4-987C-0CF1-0B4F32B55A65" name="ESTABLISHMENT_OWNER_USER_FK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>2D1EF127-D5CE-6467-118A-1411CEF84316</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3C4DFCA5-0576-42D4-9C18-2F1FAEBE8C83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

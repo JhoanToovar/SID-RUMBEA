@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D0F83835-D09D-0639-3609-8E51F14CA5A8" name="BRANCH_EVENT">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-11 20:35:13 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="B92ABDD0-52EA-B4A2-BB76-9EF30E756634">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:00:46 UTC</createdTime>
+<generatorID>696B7212-09B1-8D78-0231-4FCAE30D6767</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+</engineerTo>
+<referedAttribute>7A44B846-78B2-D629-B40A-ED3078C6BAD4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="C8FF9A0E-35A8-C082-F432-ACA6B10BAA2A">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:16:30 UTC</createdTime>
+<generatorID>7FAE17A9-CB39-608B-F44E-FC672EF4B20C</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+</engineerTo>
+<referedAttribute>B07A72B0-AFFA-1939-3D59-30313582B032</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D4B0ECC5-BD4C-DECE-E2DD-1BFAEA5A3977" name="BRANCH_EVENT PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:00:41 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B92ABDD0-52EA-B4A2-BB76-9EF30E756634</attributeRef>
+<attributeRef>C8FF9A0E-35A8-C082-F432-ACA6B10BAA2A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

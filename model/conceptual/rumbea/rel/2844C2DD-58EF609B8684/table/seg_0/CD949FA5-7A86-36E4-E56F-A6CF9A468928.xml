@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD949FA5-7A86-36E4-E56F-A6CF9A468928" name="CLIENT">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>C81AA2B2-8324-62BA-FEC7-C3757FD333C0</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDDLTransformationScript>true</useDDLTransformationScript>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="438F9FD1-EE25-420E-311A-504FBD79BFE6">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>35BB6EDA-2FBE-4375-9DC8-DFACBEBAB355</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E9C5216-5D44-418A-1693-9D8E10774ACD" referredColumn="7C21316C-2901-F473-1CE0-7E48FCA868A6"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8BBB3FCA-FD1E-66CD-819D-522146D02204" name="CLIENT_PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>E130EDE5-9141-6FF9-2637-2EF5A13CFE4D</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="438F9FD1-EE25-420E-311A-504FBD79BFE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FCF263B9-B041-1AA2-8F28-0EF09BA29BE1" name="CLIENT_USER_FK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>871CB9D0-13BD-1F8B-597C-F3D52C4E02FF</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="438F9FD1-EE25-420E-311A-504FBD79BFE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

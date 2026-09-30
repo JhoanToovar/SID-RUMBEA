@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E4283CD9-84EA-4618-FD63-E2042C8A3307" name="FAVORITE">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>8B361CC5-2EA3-A6A8-155A-4891FC9D53D0</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDDLTransformationScript>true</useDDLTransformationScript>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="assignmentDate" id="D500E88C-5973-833C-03A0-DB0B5B39E49B">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>E87391A2-D40D-1F5F-8010-400F46C2E60C</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_id" id="4914A9FF-CEC8-D390-10DB-F8F3D648B3C5">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>FE6A2D7C-D420-AFB9-5006-5FC1C90CE191</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F8AC869F-BF7F-2A0E-BC59-2BA915EF4AB4" referredColumn="438F9FD1-EE25-420E-311A-504FBD79BFE6"/>
+</associations>
+</Column>
+<Column name="Branch_Branch_ID" id="B55A3CE4-429C-A667-EA88-F094E0161F21">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id1" id="4412CDB9-3E74-C8AD-296E-175B5AAAA537">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:16:55 UTC</createdTime>
+<generatorID>6C95E577-BDD1-CC07-9190-AAFF31F471E8</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D750BB2D-DBE3-1B2A-2C61-18DF98D4A06F" referredColumn="4150CBD0-5B91-D32F-4CE1-16067E6C7166"/>
+</associations>
+</Column>
+<Column name="id" id="E06B2714-057D-2529-1CB2-D72DD836EF02">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:16:55 UTC</createdTime>
+<generatorID>6D6C43C6-BF35-9A80-1800-F6CA1D995899</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1D6DB75-58FA-A1B8-92A2-E9C5424DE0E1" name="FAVORITE_PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>3E7C9508-187C-854B-F2FF-4BFD370D2F80</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E06B2714-057D-2529-1CB2-D72DD836EF02"/>
+<colUsage columnID="4412CDB9-3E74-C8AD-296E-175B5AAAA537"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7ACFD2D9-EFB3-91D3-8264-6E5FB7AD1225" name="FAVORITE_CLIENT_FK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>0C281A57-2457-EA37-E679-69737D9040C0</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4914A9FF-CEC8-D390-10DB-F8F3D648B3C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EAD37227-0F6A-B527-31D0-EA39C0B54F53" name="FAVORITE_Branch_FK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 01:56:01 UTC</createdTime>
+<generatorID>5B53588A-E914-CD99-2259-5D9613A76A75</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4412CDB9-3E74-C8AD-296E-175B5AAAA537"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

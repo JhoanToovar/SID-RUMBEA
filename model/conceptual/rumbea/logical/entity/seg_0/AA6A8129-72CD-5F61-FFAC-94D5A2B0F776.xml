@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AA6A8129-72CD-5F61-FFAC-94D5A2B0F776" name="BRANCH_MUSIC_GENRE">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-11 20:33:16 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="55F5BD43-7AC2-C07F-BF23-B072E0870B60">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:00:46 UTC</createdTime>
+<generatorID>DD7B22A7-E7D4-EA98-43F4-14E746F4A770</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+</engineerTo>
+<referedAttribute>7A44B846-78B2-D629-B40A-ED3078C6BAD4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="84453B84-86FD-6682-2CF8-4A3C93167CB1">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:01:53 UTC</createdTime>
+<generatorID>23BE2D9A-2706-4E29-251C-DF02D4548517</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+</engineerTo>
+<referedAttribute>C4B29B2A-392E-B66C-FFE8-8F5CA44328BC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="7F0921E7-0ED2-D1A9-A7EC-758E1FD2C821" name="BRANCH_GENRE PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:00:41 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>55F5BD43-7AC2-C07F-BF23-B072E0870B60</attributeRef>
+<attributeRef>84453B84-86FD-6682-2CF8-4A3C93167CB1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
