@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CC01EF24-7DEF-BB4A-183D-F73F5F4986CE" name="EVENT">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>DD176CBE-D34E-3AD0-09B5-757667F09DFA</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="9F3130D8-E310-F8F8-6109-33082B618D50">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>B07A72B0-AFFA-1939-3D59-30313582B032</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="6A183693-A780-79A6-A4D4-0F3AA7113F36">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>0912666E-8E72-C608-5ADA-227BE7D8FCA1</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="realizationDate" id="9C228955-A8A5-E7FC-8C62-A894584E16E2">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>6881C8F0-9E8F-2C8A-6FCF-FE6060E726A3</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="BF3972DF-4244-9724-3AF4-74FAE9298AA5">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>2D696F83-193E-413E-1B3C-F9149E6685AB</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="specialCover" id="88CF0BBD-988E-D5FE-2FD3-B6B717192E70">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>72A0B6C9-F97C-0C7E-1D53-BCA00969629B</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BEE57EFF-4240-B902-2F89-E9B030F3111F" name="EVENT_PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>8677A711-75D0-F203-8E91-EBF86F65D051</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F3130D8-E310-F8F8-6109-33082B618D50"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

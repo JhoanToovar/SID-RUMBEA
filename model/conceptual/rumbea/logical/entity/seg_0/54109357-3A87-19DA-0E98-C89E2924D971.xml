@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="54109357-3A87-19DA-0E98-C89E2924D971" name="BRANCH_SCHEDULE">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:35:21 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="5C463C75-B7FB-ABC8-94F8-D3ABCF1F020F">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:35:24 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dayOfWeek" id="84311930-8DDB-6064-511B-FB90857AFBAC">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:35:24 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="openTime" id="CF71CAC8-7292-5701-1D5A-DC6B1CD9C03A">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:36:33 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="closeTime" id="C92685C7-28DF-4B4E-6F16-502539EBD9CB">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:36:46 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="736C5021-4D24-FACB-1D6E-6AE7D4CA911C">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:37:21 UTC</createdTime>
+<generatorID>0927C051-F116-4D1A-63AA-ED5756C286BB</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
+</engineerTo>
+<referedAttribute>7A44B846-78B2-D629-B40A-ED3078C6BAD4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2DEB16D5-49E4-1504-A560-128C1F5D6031" name="BRANCH_SCHEDULE PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:35:28 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5C463C75-B7FB-ABC8-94F8-D3ABCF1F020F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

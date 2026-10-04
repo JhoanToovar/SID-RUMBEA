@@ -4,7 +4,7 @@
 <createdTime>2026-09-10 02:28:38 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2026-09-10 02:28:48 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,7 +32,7 @@
 <createdTime>2026-09-10 02:28:54 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -46,7 +46,7 @@
 <createdTime>2026-09-10 02:30:35 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -59,7 +59,7 @@
 <createdTime>2026-09-10 02:31:17 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -72,7 +72,7 @@
 <createdTime>2026-09-10 02:31:38 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -84,7 +84,7 @@
 <createdTime>2026-09-10 02:32:41 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -99,24 +99,12 @@
 <generatorID>23B11B87-BF94-8856-DF19-4378D43BCAEA</generatorID>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
 </engineerTo>
 <referedAttribute>C515FB98-3900-B222-D2D8-2738699ECEBF</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="openingHours" id="5C824610-3C83-707C-7385-FF616F393E9D">
-<createdBy>PC</createdBy>
-<createdTime>2026-10-02 12:49:23 UTC</createdTime>
-<ownerDesignName>rumbea</ownerDesignName>
-<engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -126,7 +114,7 @@
 <createdTime>2026-09-12 02:00:41 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="8EB04AF2-827C-E2F0-A527-326A4B6ED9FE" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

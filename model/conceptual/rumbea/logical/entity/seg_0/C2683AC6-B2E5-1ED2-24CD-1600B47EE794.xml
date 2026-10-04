@@ -4,7 +4,7 @@
 <createdTime>2026-09-10 02:58:49 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -21,7 +21,7 @@
 <createdTime>2026-09-10 03:02:00 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -34,7 +34,7 @@
 <createdTime>2026-09-10 03:02:41 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -47,7 +47,7 @@
 <generatorID>93153D15-3B90-1B0F-D40A-5C2F1A7CDE40</generatorID>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
 </engineerTo>
 <referedAttribute>7A44B846-78B2-D629-B40A-ED3078C6BAD4</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -56,15 +56,4 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
-<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="7CA64B9E-485D-0C9F-05CD-54BB9E284294" name="ADMIN PK">
-<createdBy>PC</createdBy>
-<createdTime>2026-09-11 21:17:52 UTC</createdTime>
-<ownerDesignName>rumbea</ownerDesignName>
-<engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
-</engineerTo>
-<pk>true</pk>
-</identifier>
-</identifiers>
 </Entity>

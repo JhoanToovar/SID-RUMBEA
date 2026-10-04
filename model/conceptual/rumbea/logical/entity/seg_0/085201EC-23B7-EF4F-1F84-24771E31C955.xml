@@ -4,7 +4,7 @@
 <createdTime>2026-09-10 03:09:48 UTC</createdTime>
 <ownerDesignName>rumbea</ownerDesignName>
 <engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -15,15 +15,4 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
-<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="9F090206-22D9-D64F-CFC7-99BD70C5B3AD" name="ESTABLISHMENT_OWNER PK">
-<createdBy>PC</createdBy>
-<createdTime>2026-09-11 21:17:42 UTC</createdTime>
-<ownerDesignName>rumbea</ownerDesignName>
-<engineerTo>
-<item key="2844C2DD-7436-82F6-5724-58EF609B8684" value="true"/>
-</engineerTo>
-<pk>true</pk>
-</identifier>
-</identifiers>
 </Entity>
