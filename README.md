@@ -58,23 +58,30 @@ SID-RUMBEA/
 │
 ├── README.md
 │
-├── doc/
-│   ├── caso_estudio/
-│   ├── bitacora_prompts/
-│   ├── acuerdos_equipo/
-│   ├── reuniones/
-│   └── actas/
+├── docs/
+│   ├── caso_estudio.pdf
+│   ├── bitacora_prompts.md
+│   ├── bitacora_seguimiento.md
+│   ├── acuerdos_trabajo_equipo.md
+│   └── actas_de_reunion/
+│       ├── acta_1.md
+│       ├── acta_2.md
+│       ├── acta_3.md
+│       ├── acta_4.md
+│       └── acta_5.md
 │
 ├── model/
 │   ├── conceptual/
-│   │   ├── MER.pdf
-│   │   └── fuentes/
+│   │   ├── correccionMerEntrega1.pdf
+│   │   └── rumbea/
 │   │
 │   └── relacional/
-│       ├── MR.pdf
-│       └── fuentes/
+│       ├── MRRumbea.pdf
+│       ├── Relaciones.pdf
+│       └── rumbea/
 │
 └── src/
+    ├── rumbea.dmd
     ├── DDL/
     ├── DML/
     ├── DQL/
@@ -87,37 +94,37 @@ SID-RUMBEA/
 
 # Documentación
 
-La documentación del proyecto se encuentra en la carpeta [`doc`](./doc).
+La documentación del proyecto se encuentra en la carpeta [`docs`](./docs).
 
 ## Caso de estudio
 
 Documento que describe la situación problema seleccionada, su contexto, objetivo y alcance.
 
-[Consultar caso de estudio](./doc/caso_estudio/)
+[Consultar caso de estudio](./docs/caso_estudio.pdf)
 
 ## Bitácora de prompts
 
 Registro de los prompts utilizados durante el desarrollo del proyecto y de las interacciones realizadas con herramientas de Inteligencia Artificial Generativa.
 
-[Consultar bitácora de prompts](./doc/bitacora_prompts/)
+[Consultar bitácora de prompts](./docs/bitacora_prompts.md)
 
 ## Acuerdos de trabajo
 
 Documento que establece los roles, responsabilidades, estrategia de trabajo y acuerdos establecidos por los integrantes del equipo.
 
-[Consultar acuerdos de trabajo](./doc/acuerdos_equipo/)
+[Consultar acuerdos de trabajo](./docs/acuerdos_trabajo_equipo.md)
 
-## Bitácora de reuniones
+## Bitácora de seguimiento
 
 Registro del seguimiento del proyecto. Incluye asistentes, tareas realizadas, nuevas asignaciones, dificultades, cambios y decisiones tomadas durante las reuniones.
 
-[Consultar bitácora de reuniones](./doc/reuniones/)
+[Consultar bitácora de seguimiento](./docs/bitacora_seguimiento.md)
 
 ## Actas de reuniones
 
 Documentación correspondiente a las reuniones realizadas durante las actividades académicas del proyecto.
 
-[Consultar actas](./doc/actas/)
+[Consultar actas](./docs/actas_de_reunion/)
 
 ---
 
@@ -320,8 +327,8 @@ git push origin main
 | Requerimientos          | Completado / En actualización |
 | Acuerdos de trabajo     | Completado                    |
 | Modelo Entidad-Relación | Completado                    |
-| Modelo Relacional       | En desarrollo                 |
-| Normalización 3FN       | En desarrollo                 |
+| Modelo Relacional       | Completado                  |
+| Normalización 3FN       | Completado                  |
 | DDL                     | Pendiente                     |
 | DML                     | Pendiente                     |
 | DQL                     | Pendiente                     |
