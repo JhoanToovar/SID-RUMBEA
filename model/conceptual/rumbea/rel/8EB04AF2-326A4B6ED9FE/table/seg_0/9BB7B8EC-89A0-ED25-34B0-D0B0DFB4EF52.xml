@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9BB7B8EC-89A0-ED25-34B0-D0B0DFB4EF52" name="CLIENT_MUSIC_PREFERENCE">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>F67611C2-702F-2716-D7EF-BD59B1AACD25</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MUSIC_GENRE_id" id="612499B1-AD04-41E7-1196-8C54F9870B00">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>2535A7D8-A52F-DD1E-100B-6B181C0CA3F2</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4AAC7F82-A819-B195-3B5A-2DEEDE5DEC9A" referredColumn="3D044055-5D61-C947-3AF5-2CB825AC4478"/>
+</associations>
+</Column>
+<Column name="CLIENT_id" id="14BB82DD-25FD-69EF-75B4-7D12E4C8034A">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>60C59414-CD58-7053-D5B1-8A3A18A24E15</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CBD9AD07-EB31-8311-C3B9-102BFDBAECE3" referredColumn="D965E1A8-B1C5-6843-9434-A919387C4931"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="67ACD965-71FB-C313-3CDF-5BF5FE41F66F" name="CLIENT_MUSIC_PREFERENCE_PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>DCEA1866-DFC1-EF05-48A7-3A2759A789B4</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="14BB82DD-25FD-69EF-75B4-7D12E4C8034A"/>
+<colUsage columnID="612499B1-AD04-41E7-1196-8C54F9870B00"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="54163794-151F-0F3D-9349-E2A43930868F" name="CLIENT_MUSIC_PREFERENCE_MUSIC_GENRE_FK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>A59A91DB-65E6-CAFB-9225-35D1B9632DF1</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="612499B1-AD04-41E7-1196-8C54F9870B00"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="32387331-68F3-3F3E-CEE5-5D7BE26AB693" name="CLIENT_MUSIC_PREFERENCE_CLIENT_FK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>5D5C7802-CCB8-04BD-B921-9CED0CB7E0D0</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="14BB82DD-25FD-69EF-75B4-7D12E4C8034A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

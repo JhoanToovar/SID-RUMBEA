@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9FB67B7F-F9BA-3282-76A4-91B1CB9ED8D8" name="MUSIC_GENRES">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>2F779C1F-5889-90E7-354A-454241CC98DA</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<ordsAlias>music_genre</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="3D044055-5D61-C947-3AF5-2CB825AC4478">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>C4B29B2A-392E-B66C-FFE8-8F5CA44328BC</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="F78D853D-06DE-8D63-E323-EF9C5EDACD32">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>F1C1E247-988D-EC6F-6A3D-3CA3B2FCE95B</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B7E8C619-2C02-D457-30AC-0C3DEC2743A9" name="MUSIC_GENRE_PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>904A334D-83AB-94B0-4200-A94CAFDB4A36</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3D044055-5D61-C947-3AF5-2CB825AC4478"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EAF11867-69CB-6187-D487-904BA7770DB4" name="MUSIC_GENRE_name_UN">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>EFF1062A-0316-4241-5ABF-6218BA732DC8</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F78D853D-06DE-8D63-E323-EF9C5EDACD32"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
