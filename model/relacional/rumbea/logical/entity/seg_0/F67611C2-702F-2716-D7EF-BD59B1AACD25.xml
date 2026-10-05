@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F67611C2-702F-2716-D7EF-BD59B1AACD25" name="CLIENT_MUSIC_PREFERENCE">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-11 20:47:15 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id1" id="2535A7D8-A52F-DD1E-100B-6B181C0CA3F2">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:01:53 UTC</createdTime>
+<generatorID>A59A91DB-65E6-CAFB-9225-35D1B9632DF1</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<referedAttribute>C4B29B2A-392E-B66C-FFE8-8F5CA44328BC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="60C59414-CD58-7053-D5B1-8A3A18A24E15">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:12:13 UTC</createdTime>
+<generatorID>5D5C7802-CCB8-04BD-B921-9CED0CB7E0D0</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<referedAttribute>35BB6EDA-2FBE-4375-9DC8-DFACBEBAB355</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DCEA1866-DFC1-EF05-48A7-3A2759A789B4" name="CLIENTE_MUSIC_PREFERENCE PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-11 20:48:25 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>60C59414-CD58-7053-D5B1-8A3A18A24E15</attributeRef>
+<attributeRef>2535A7D8-A52F-DD1E-100B-6B181C0CA3F2</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

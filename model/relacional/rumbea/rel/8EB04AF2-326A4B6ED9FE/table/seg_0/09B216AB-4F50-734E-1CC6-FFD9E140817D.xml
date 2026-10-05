@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="09B216AB-4F50-734E-1CC6-FFD9E140817D" name="BRANCHS">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>442E5AAF-0162-58A3-8019-FC29C8789F1D</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<ordsAlias>branch</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="842EC549-7034-0DD7-DAED-268FC48D51EF">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>7A44B846-78B2-D629-B40A-ED3078C6BAD4</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="suffix" id="10E68CFA-8F12-0ACB-09A8-CDE09FEB33F6">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>F18C6806-2DD0-408E-C5B0-78E24EC090E3</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="location" id="B0E14CC4-FC21-C211-3791-A55FEBDFEA78">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>E0C511E5-BBD9-B193-39C3-8C2B79F2D23B</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="68A1A027-7233-8164-F0DF-F41E3B14DE5A">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>4BF6508D-1C1C-3DFD-7394-F5CF181BF119</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="capacity" id="2C28A5B4-36FD-8123-72F1-07A01239417A">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>52DD00FE-02A0-71F4-EF38-7BCE7CACBFE2</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cover" id="168E9CA8-48DA-7BAA-D276-30A6B22AFC88">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>87C4F6CB-0B75-42ED-1D0B-BE3BBF8610EE</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTABLISHMENT_id" id="CC066983-1CB1-FECA-6FF7-A411C6CE20C9">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>5703CD23-8550-B1C3-1579-041594D05673</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C5946F62-8B0B-D8F3-FE11-A29B0A48B450" referredColumn="1A30D25C-D7FF-DE05-0F5D-B7B06C6C0A02"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="84EECF78-6918-6AA4-EC43-4ABB4DDAF61D" name="BRANCH_PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>AE8E1969-81D4-9683-B63C-3BDCE938D8AC</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="842EC549-7034-0DD7-DAED-268FC48D51EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="28248AF6-106B-56A9-F366-BA82DD240183" name="BRANCH_ESTABLISHMENT_FK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>23B11B87-BF94-8856-DF19-4378D43BCAEA</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CC066983-1CB1-FECA-6FF7-A411C6CE20C9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4A719D68-57CB-7DEE-E8E8-A9DFDDA3160C" name="LINK_OF_INTEREST">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-10 02:40:03 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="F4C40417-7611-CDDA-97A3-F6CD385775B1">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-10 02:40:17 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="FA45843E-19C2-B563-3250-9C43BE020509">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-10 02:40:24 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="link" id="49174F4A-5FE0-21CF-BC2A-23C897164698">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-10 02:40:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="B8179201-109A-7921-2D33-EF4F18C1D098">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:00:46 UTC</createdTime>
+<generatorID>5C947F62-23F5-61E9-32B7-7C99BAAF6AEF</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<referedAttribute>7A44B846-78B2-D629-B40A-ED3078C6BAD4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="2C748FF2-49B7-5473-8769-30875FFE0104" name="LINK_OF_INTEREST PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-09-12 02:02:07 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="CD781858-F331-5C5A-56A4-BEAFE5BB5612" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F4C40417-7611-CDDA-97A3-F6CD385775B1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

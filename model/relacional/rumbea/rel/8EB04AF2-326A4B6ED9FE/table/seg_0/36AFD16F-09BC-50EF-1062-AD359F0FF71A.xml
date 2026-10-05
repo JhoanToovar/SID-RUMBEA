@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="36AFD16F-09BC-50EF-1062-AD359F0FF71A" name="VISIT_PROFILES">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>EB6565D2-4843-97E7-98A2-F1D7E6C2C06B</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<ordsAlias>visit_profile</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="visitDate" id="8DE5A8ED-2A0F-1E30-1CAE-C4D5ADA0338A">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>1B957523-F56E-DBB5-6503-BC293B224244</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="visitTimeIn" id="0942B4C6-217A-8BC0-2458-C2D42DDB403F">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>D9B9319B-B5AC-841D-7B9D-F20BF94C55B4</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_id" id="8934DE28-1A83-912D-1A06-57A1CFDFD8AF">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>07138032-87EE-987F-E14E-E86EFADC0929</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A5A2749A-FA8A-5E17-4135-067FF96D9900" referredColumn="D965E1A8-B1C5-6843-9434-A919387C4931"/>
+</associations>
+</Column>
+<Column name="BRANCH_id" id="5FB4631E-26AF-1407-208C-2B3BC6597F60">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>FC57AC4F-5FF6-516B-7886-63BE2ECD1020</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="40ACBAF5-663F-2B30-4B0B-235C3C0BC248" referredColumn="842EC549-7034-0DD7-DAED-268FC48D51EF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="12A3DF42-EA2F-B3DC-2A8D-B9E6AA578587" name="VISIT_PROFILE_PK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>C3B07911-0B6D-0C7B-D56A-40E23F6427DE</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8934DE28-1A83-912D-1A06-57A1CFDFD8AF"/>
+<colUsage columnID="5FB4631E-26AF-1407-208C-2B3BC6597F60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7670B97F-8D85-3683-DC35-7C8E6A5A71F2" name="VISIT_PROFILE_CLIENT_FK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>F92641A2-E6E9-6067-6B10-CEBAC7B0ED53</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8934DE28-1A83-912D-1A06-57A1CFDFD8AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="42633D52-652E-22D2-004B-FF9C5E7CF122" name="VISIT_PROFILE_BRANCH_FK">
+<createdBy>PC</createdBy>
+<createdTime>2026-10-04 20:38:44 UTC</createdTime>
+<generatorID>3D11BA3F-C27E-E70A-3FD0-B3ACAE540396</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5FB4631E-26AF-1407-208C-2B3BC6597F60"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
