@@ -10,11 +10,11 @@ Proyecto académico desarrollado para la asignatura **Sistemas Intensivos en Dat
 
 ## Integrantes
 
-| Integrante   | Código          | GitHub                                              |
-| ------------ | --------------- | --------------------------------------------------- |
-| Jhoan Tovar  |  | [JhoanToovar](https://github.com/JhoanToovar)       |
-| Juan Pablo   |  | [ArkJuanpa](https://github.com/ArkJuanpa) 
-| Miguel Pérez | A00407054 | [miguelperezdev](https://github.com/miguelperezdev) |
+| Integrante   | GitHub                                              |
+| ------------ | --------------------------------------------------- |
+| Jhoan Tovar  |  [JhoanToovar](https://github.com/JhoanToovar) |
+| Juan Pablo   |   [ArkJuanpa](https://github.com/ArkJuanpa) |
+| Miguel Pérez | [miguelperezdev](https://github.com/miguelperezdev) |
 
 ---
 
@@ -327,19 +327,6 @@ git push origin main
 | DQL                     | Pendiente                     |
 | PL/SQL                  | Pendiente                     |
 | Documentación final     | Pendiente                     |
-
----
-
-# Equipo de desarrollo
-
-**Jhoan Tovar**
-GitHub: [JhoanToovar](https://github.com/JhoanToovar)
-
-**Juan Pablo**
-GitHub: [ArkJuanpa](https://github.com/ArkJuanpa)
-
-**Miguel Pérez**
-GitHub: [miguelperezdev](https://github.com/miguelperezdev)
 
 ---
 
