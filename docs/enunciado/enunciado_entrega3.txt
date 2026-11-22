@@ -1,7 +1,0 @@
-Realizar script DDL de la base de datos debidamente documentada.
-Realizar script de los inserts (DML) con las tuplas necesarias para generar los reportes
-propuestos inicialmente (y que cada reporte tenga al menos 10 registros).
-Realizar las consultas (DQL) para obtener los reportes definidos (consultas que incluyan agrupamiento, joins (inner join, outer join), ordenamiento y al menos un TOP). Se debe colocar descripción de la consulta en lenguaje natural, como comentario. 
-Documentar los riesgos del uso de herramientas de IAg para este tipo de actividades en un contexto profesional.
-Realizar Script PL/SQL. Realice por lo menos, un procedimiento almacenado, una función y un trigger sobre la base de datos creada. Cada uno de estos elementos debe estar documentado, indicando su funcionalidad.
-Entrega completa del repositorio
