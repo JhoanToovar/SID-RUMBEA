@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="BRANCHS" directorySegmentName="seg_0" id="C955F6B6-6C9F-C657-A8E0-82822236CB90">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="description" id="0A2FA17A-992C-6FED-BCE3-0347CC25BB2C">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="cover" id="12C38F6F-92E7-EA7A-4EB1-ACAA90556092">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="location" id="35BF2255-8C6E-F8F4-D3C1-57232056111F">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="capacity" id="62C5D65B-186B-18DE-925F-8E17BC3CCBEC">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="suffix" id="7315BE47-61C6-0CC1-8B3D-52022FE31B82">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="id" id="DF904EBD-7083-FB1F-A28A-ED7AF9D1A553">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ESTABLISHMENT_id" id="E46524BD-8808-3ECA-7A11-E074BE79F7BF">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="BRANCH_ESTABLISHMENT_FK" id="D1D39BB7-7092-4E51-A9B4-30B0738ACA69">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="BRANCH_PK" id="39496A8C-0AA6-CE88-B667-FBB421A426F8">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="BRANCHS_CAPACITY_CK" id="9B661242-C69B-6F6E-2761-BEFFB24CC5A3">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 19:08:32 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</TableCheckConstraint>
+<TableCheckConstraint name="BRANCHS_COVER_CK" id="B7298B86-19D5-C2F8-8758-A7D6A7681FD0">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 19:08:32 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+</TableCheckConstraint>
+</tableCheckConstraints>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="BRANCHS__UN" id="21ECB7BE-1AE7-715D-4344-973F838A372F">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AD5938D8-2FC7-0188-2D67-D10C80DB87FE" name="BRANCH_EVENTS">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>8B6C08BB-CA79-BAA3-9AB4-097F0932DFBF</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="BRANCH_id" id="1CFE3274-E99D-3E54-8B2D-622F081A6FAF">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>C2C6A28C-796E-2BA0-C2DD-3872D0E7566E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="36BCEAFF-FF17-4DE9-0DE0-7785695DCB06" referredColumn="DF904EBD-7083-FB1F-A28A-ED7AF9D1A553"/>
+</associations>
+</Column>
+<Column name="EVENT_id" id="9139080F-43B4-5F40-ACC7-C8A13BA3386D">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>91FDBB9D-BE1A-1D1B-365A-6A293AF8AB96</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DD85408E-AA88-3C9B-4F8D-1BE21C212D73" referredColumn="2328169F-086F-8B1E-C740-19FEB5F18A51"/>
+</associations>
+</Column>
+<Column name="ESTABLISHMENT_id" id="B2E36AFC-D6B2-31FD-9CC7-C7526A7C317B">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>530B92AB-760D-BB19-7523-14B0D0F2316C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="36BCEAFF-FF17-4DE9-0DE0-7785695DCB06" referredColumn="E46524BD-8808-3ECA-7A11-E074BE79F7BF"/>
+<colAssociation fkAssociation="DD85408E-AA88-3C9B-4F8D-1BE21C212D73" referredColumn="41E302B0-6B56-5701-858A-497AA7A922AC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FDA0A2D1-5C6D-BE80-3278-2C0F7F05D192" name="BRANCH_EVENT_PK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>5AB531B7-2C15-A763-D7DD-B56A8D1C3B49</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CFE3274-E99D-3E54-8B2D-622F081A6FAF"/>
+<colUsage columnID="9139080F-43B4-5F40-ACC7-C8A13BA3386D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="89EB4711-C90B-D49F-6379-235DCF7DC441" name="BRANCH_EVENT_BRANCH_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CFE3274-E99D-3E54-8B2D-622F081A6FAF"/>
+<colUsage columnID="B2E36AFC-D6B2-31FD-9CC7-C7526A7C317B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9C7B7F57-1030-9693-DD2F-EE785F2D8CF4" name="BRANCH_EVENT_EVENT_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9139080F-43B4-5F40-ACC7-C8A13BA3386D"/>
+<colUsage columnID="B2E36AFC-D6B2-31FD-9CC7-C7526A7C317B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

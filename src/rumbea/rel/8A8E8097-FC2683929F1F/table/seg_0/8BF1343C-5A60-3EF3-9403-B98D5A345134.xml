@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8BF1343C-5A60-3EF3-9403-B98D5A345134" name="BRANCH_MUSIC_GENRES">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>A20C90C5-1E10-0CD5-8806-8844F99F6CEE</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="BRANCH_id" id="04CC0668-4661-D2A4-DE5E-38C5AF2BF95A">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>E6D29AAB-FA99-DCDD-BA07-60C0899E19B9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D377E6E4-A8EE-8B3B-229E-B1B64F566E5E" referredColumn="DF904EBD-7083-FB1F-A28A-ED7AF9D1A553"/>
+</associations>
+</Column>
+<Column name="MUSIC_GENRE_id" id="A3B0468B-0A72-3D41-9C94-169CC50E6438">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>87AB0D7A-22F2-4DB7-A227-38EB9AD90B37</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>414DB231-3AE7-8BC3-1540-05ED564CEF49</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="69015A79-E60E-0602-E9C5-9CF3E3F30977" referredColumn="E500C839-B352-F1C0-55B4-E1F20DAD145F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3AF4E046-9DF3-F20B-B5A8-67AAAA09F52F" name="BRANCH_MUSIC_GENRE_PK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>44AD06A5-3674-FE80-44D5-7272E2D5D8C9</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04CC0668-4661-D2A4-DE5E-38C5AF2BF95A"/>
+<colUsage columnID="A3B0468B-0A72-3D41-9C94-169CC50E6438"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="822A2D33-6770-16D6-2622-FE3F33CA0914" name="BRANCH_MUSIC_GENRE_BRANCH_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="04CC0668-4661-D2A4-DE5E-38C5AF2BF95A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8AD30B6C-ABE6-DD8D-FC65-8B2043F5F400" name="BRANCH_MUSIC_GENRE_GENRE_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A3B0468B-0A72-3D41-9C94-169CC50E6438"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8913DED5-5CEE-5465-5884-A3351C280B29" containerWithKeyObject="BCB173A2-DFAA-AE89-1086-7383485921CF" localFKIndex="87D113A1-A18E-3432-12C1-2C2DDC87E3E2" name="REMINDER_EVENT_FK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>1F6830E4-F060-7C24-2EF6-3B96FA6193BD</importedID>
+<referredTableLongName>EVENTS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FDC8DB51-C8EB-2F2A-A7C2-8C039232FE8E</referredTableID>
+<keyObject>9DFD40E0-A179-17D2-890C-8B64BFECBABB</keyObject>
+<referredKeyID>9DFD40E0-A179-17D2-890C-8B64BFECBABB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

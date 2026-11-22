@@ -1,0 +1,150 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B7E34885-B99D-4F9A-FDD3-D36C21571CEA" name="ADMINS">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>6B48BC55-295A-1C1A-7C11-C859C7D976C6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="CF31E143-201C-E7D1-D63A-B363D2243DD7">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>F78CB24F-9747-13D7-017E-FD3A2D2B1E71</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="12A40411-8336-A93A-3E3C-8E435ADDFA61" referredColumn="A0187EE5-371A-326F-9367-BEFA3CDFB784"/>
+</associations>
+</Column>
+<Column name="stateActive" id="2149A57D-D675-2ADE-278D-7681C59B0286">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>B089F111-07A9-4DBD-53CA-85A9ED013F36</importedID>
+<constraintName>ADMINS_STATE_CK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>15CC8D53-F1DA-BBBE-087C-AC1EBB704B79</domain>
+<listOfValues>
+<valueDef value="ACTIVO" description=""/>
+<valueDef value="INACTIVO" description=""/>
+</listOfValues>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lastConnectionDate" id="C4E8727A-B9D2-7FD9-CFFC-908D1BA46653">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>6F3379CC-F5A8-940D-95DF-7C14CEEA3501</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>051C59B0-DF21-9DEC-1480-7EC14028A611</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BRANCH_id" id="60768C54-1BE5-D590-9614-7E06E18AE7B9">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>C9073451-D391-7B16-B779-EBD6B714BD7E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B7A19B1A-A9EA-0DDC-631E-BAFBDED62011" referredColumn="DF904EBD-7083-FB1F-A28A-ED7AF9D1A553"/>
+</associations>
+</Column>
+<Column name="role" id="AFFB9FC7-FBEE-08F1-E651-7CC4F6C9EB9A">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>9E2D2B3F-0A85-D6E1-E733-3C9BFDECB960</importedID>
+<constraintName>ADMINS_CK_1</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>15CC8D53-F1DA-BBBE-087C-AC1EBB704B79</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 21c" definition="role = &apos;ADMIN&apos;"/>
+</checkConstraint>
+<defaultValue>&apos;ADMIN&apos;</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="12A40411-8336-A93A-3E3C-8E435ADDFA61" referredColumn="39DDA072-BAA5-E0A3-B345-FF28F9F70A86"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43FBC59D-F8E0-E865-7BD5-638BEC6D2521" name="ADMIN_PK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>DD43807D-4789-BB57-1F1F-E87EF62F1292</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF31E143-201C-E7D1-D63A-B363D2243DD7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4C37C6EA-03B9-D7D3-D1EA-E9CB885C1D3F" name="ADMINS__UN">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>91C9C1CF-EEA7-4526-5780-8CD98E552E43</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="60768C54-1BE5-D590-9614-7E06E18AE7B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="615A1B20-FF24-32E9-2F34-0F33FAF261B5" name="ADMIN_BRANCH_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="60768C54-1BE5-D590-9614-7E06E18AE7B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FE2EECBC-8D98-F1B2-78D5-24EAFCE732F6" name="ADMIN_USER_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CF31E143-201C-E7D1-D63A-B363D2243DD7"/>
+<colUsage columnID="AFFB9FC7-FBEE-08F1-E651-7CC4F6C9EB9A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="ADMINS_CK_1" directorySegmentName="seg_0" id="9155000D-E334-1B84-D283-63859304CEEF">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 19:07:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<rule><![CDATA[role = 'ADMIN']]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>
