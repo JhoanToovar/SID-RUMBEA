@@ -4,9 +4,7 @@
 
 ## 1. Entorno
 
-Se usa Oracle 11g XE local en Docker. Es la versión para la que Data Modeler exportó el DDL y no requiere el servidor de la universidad. La última ejecución está en [la evidencia](./evidencias/ejecucion_oracle11g.txt).
-
-> **Pendiente:** la evidencia actual es anterior a las correcciones `[E3-R]` (24 pruebas, 18 tablas). Hay que volver a correr `ejecutar_todo.sql` y reemplazar el archivo con la nueva salida.
+Se usa Oracle 11g XE local en Docker. Es la versión para la que Data Modeler exportó el DDL y no requiere el servidor de la universidad. La última ejecución se hizo con SQL*Plus dentro del contenedor y su salida está en [la evidencia](./evidencias/ejecucion_oracle11g.txt).
 
 **Crear la base (una sola vez por computador)**, con Docker Desktop abierto, en una sola línea y eligiendo las dos contraseñas:
 
