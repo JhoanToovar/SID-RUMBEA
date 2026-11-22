@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="97CF81BA-7E37-E3AF-BB01-4A211ED01557" name="REVIEW">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>5CDE7DF3-DAE0-103B-17FB-41A3693A3A83</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="88253C12-6A4F-88D3-F3D5-B49E457ECB36">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>B00E9E3A-8957-8381-D926-F440D1A88AF2</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>414DB231-3AE7-8BC3-1540-05ED564CEF49</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="text" id="DBEED254-CBEC-90C3-BF06-3943F7095F72">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>94CF22E1-6F99-977F-B09B-3448998D22EE</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>070ADE56-D01D-73A9-715D-C3AAED048BDE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rating" id="7892B4A8-A922-A90A-70B0-30B2FBCD820A">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>DB51879B-DA73-46F4-D219-22927B3442F4</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<constraintName>REVIEWS_RATING_CK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>99B168AD-CE76-0ABD-AFB5-6C2BAB9FE9F3</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>1</beginValue>
+<endValue>5</endValue>
+</rangeDef>
+</listOfRanges>
+</Attribute>
+<Attribute name="date" id="741466EC-376C-2363-4D9F-91E1A24D8C30">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>884009CE-FABA-FCF4-4929-A092C3278EA2</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>051C59B0-DF21-9DEC-1480-7EC14028A611</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="BRANCH id" id="F3FA1326-5C51-2F72-7D1B-8F17D7B0EF46">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>70BDDB95-B414-6CA5-B4B6-48B207BC9BCB</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<referedAttribute>68B8351F-F10A-B8C1-FA6B-21503AD2D995</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FB6F850E-3A96-27E1-8331-5E90BC71FDC6" name="REVIEW PK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>3DE519D4-AA5A-61D8-4DD6-13826B5DD584</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>88253C12-6A4F-88D3-F3D5-B49E457ECB36</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

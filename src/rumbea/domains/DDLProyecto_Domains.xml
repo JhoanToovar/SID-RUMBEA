@@ -127,6 +127,17 @@
 <fileName>DDLProyecto_Domains</fileName>
 <logicalDatatype>LOGDT024</logicalDatatype>
 </Domain>
+<Domain class="oracle.dbtools.crest.model.design.Domain" name="NUMERIC_6_0_0" id="D4AB3BEA-5789-33ED-7217-05A9CDA7F2E0">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<avTSortOrder>0</avTSortOrder>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<dataTypeSize>0</dataTypeSize>
+<fileName>DDLProyecto_Domains</fileName>
+<logicalDatatype>LOGDT019</logicalDatatype>
+</Domain>
 <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_500" id="D5F0BEF0-5ADF-F972-8FB5-0648F9063E35">
 <createdBy>Pc</createdBy>
 <createdTime>2026-11-22 17:06:19 UTC</createdTime>
