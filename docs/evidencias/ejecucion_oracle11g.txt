@@ -1,0 +1,242 @@
+SID-RUMBEA - Evidencia de ejecucion - 22/11/2026
+Motor:   Oracle Database 11g XE 11.2.0.2 (Docker, gvenzl/oracle-xe:11-slim)
+Cliente: motor Run Script (F5) de SQL Developer 24.3.1, invocado por linea de comandos
+Se omitieron lineas en blanco repetidas, marcas internas del cliente y las
+confirmaciones "Table created/altered" y "Comment created".
+
+######## 1. src/ejecutar_todo.sql sobre una base vacia
+
+[0/5] Version de Oracle
+
+PRODUCT                                            VERSION
+-------------------------------------------------- --------------
+NLSRTL                                             11.2.0.2.0
+Oracle Database 11g Express Edition                11.2.0.2.0
+PL/SQL                                             11.2.0.2.0
+TNS for Linux:                                     11.2.0.2.0
+
+[1/5] DDL
+
+PL/SQL procedure successfully completed.
+
+DDL de Rumbea creado.
+[2/5] DML
+DML de Rumbea cargado.
+[3/5] PL/SQL
+
+PL/SQL procedure successfully completed.
+
+Function FN_RUMBEA_PROMEDIO_SEDE compiled
+
+No errors.
+
+Trigger TRG_RUMBEA_BRANCH_UPDATE compiled
+
+No errors.
+
+Procedure PR_RUMBEA_ACTUALIZAR_SEDE compiled
+
+No errors.
+
+PL/SQL procedure successfully completed.
+
+PL/SQL de Rumbea compilado.
+[4/5] Pruebas
+--- Funcion ---
+[OK]    promedio de SED01 = 3.93
+[OK]    sede sin resenas retorna NULL
+[OK]    sede inexistente (esperado -20001, obtenido -20001)
+--- Procedimiento y trigger: casos validos ---
+[OK]    dueno cambia el aforo
+[OK]    lo que no se envia no cambia
+[OK]    el historial registra solo al dueno
+[OK]    admin cambia cover y descripcion
+[OK]    el historial registra solo al admin
+--- Procedimiento y trigger: casos rechazados ---
+[OK]    usuario inexistente (esperado -20011, obtenido -20011)
+[OK]    cliente no actualiza sedes (esperado -20012, obtenido -20012)
+[OK]    actualizacion sin cambios (esperado -20021, obtenido -20021)
+[OK]    sede inexistente (esperado -20022, obtenido -20022)
+[OK]    dueno de otra sede (esperado -20023, obtenido -20023)
+[OK]    admin de otra sede (esperado -20024, obtenido -20024)
+[OK]    admin inactivo (esperado -20024, obtenido -20024)
+[OK]    INSERT directo con dos autores (esperado -20020, obtenido -20020)
+[OK]    aforo negativo (esperado -2290, obtenido -2290)
+--- Restricciones del DDL ---
+[OK]    rating fuera de 1 a 5 (esperado -2290, obtenido -2290)
+[OK]    cover negativo (esperado -2290, obtenido -2290)
+[OK]    cover especial negativo (esperado -2290, obtenido -2290)
+[OK]    un dueno no puede ser cliente (esperado -2291, obtenido -2291)
+[OK]    evento en sede de otro establecimiento (esperado -2291, obtenido -2291)
+[OK]    segundo tipo para una sede (esperado -1, obtenido -1)
+[OK]    segundo horario el mismo dia (esperado -1, obtenido -1)
+RESULTADO: 24 correctas, 0 fallidas
+
+PL/SQL procedure successfully completed.
+
+[5/5] Reportes
+
+=== Q1 - R1: accesos diarios al perfil de la sede del administrador ===
+
+FECHA         ACCESOS PRIME ULTIM
+---------- ---------- ----- -----
+2026-11-21          3 19:35 21:54
+2026-11-20          5 19:27 22:55
+2026-11-19          4 17:09 21:29
+2026-11-18          2 20:26 22:52
+2026-11-17          1 20:46 20:46
+2026-11-16          3 17:53 21:47
+2026-11-15          2 19:50 21:03
+2026-11-14          5 17:11 22:50
+2026-11-13          4 18:15 21:31
+2026-11-12          2 18:46 21:15
+2026-11-11          2 17:59 20:17
+2026-11-10          3 17:39 22:38
+2026-11-09          2 19:59 21:09
+2026-11-08          1 18:38 18:38
+
+14 rows selected.
+
+=== Q2 - R1: resenas de la sede del administrador ===
+
+FECHA            CLIENTE                 ESTRELLAS COMENTARIO                                   ES_FAVORITA
+---------------- ---------------------- ---------- -------------------------------------------- -----------
+2026-11-21 23:15 Andrea Bedoya                   5 Volvi y mejoro bastante el sonido            SI
+2026-11-20 23:40 Esteban Cardona                 3 Normal, se llena demasiado temprano          NO
+2026-11-20 21:35 Sofia Rios                      3 Esta bien, pero el sonido podria mejorar     NO
+2026-11-19 22:14 Mariana Bedoya                  4 Muy buena musica y precios razonables        NO
+2026-11-19 19:42 Felipe Quintero                 5 Excelente musica y muy buena atencion        NO
+2026-11-16 22:32 Valentina Zapata                5 Ambiente increible, vuelvo seguro            NO
+2026-11-16 20:16 Camilo Mosquera                 5 Excelente musica y muy buena atencion        NO
+2026-11-14 23:35 Gabriela Hurtado                2 El cover me parecio alto para lo que ofrece  SI
+2026-11-14 22:46 Julian Lozano                   5 Excelente musica y muy buena atencion        SI
+2026-11-13 22:16 Isabella Arango                 1 No nos dejaron entrar pese a la reserva      SI
+2026-11-13 21:26 Mateo Caicedo                   4 Muy buena musica y precios razonables        SI
+2026-11-11 18:44 Sebastian Salazar               4 Buen ambiente, aunque hubo algo de fila      SI
+2026-11-10 18:24 Daniela Montoya                 4 Muy buena musica y precios razonables        SI
+2026-11-09 21:54 Andrea Bedoya                   5 Excelente musica y muy buena atencion        SI
+2026-11-08 19:23 Oscar Velez                     4 Muy buena musica y precios razonables        SI
+
+15 rows selected.
+
+=== Q3 - R2: establecimientos del dueno por favoritos ===
+
+ESTABLECIMIENTO               SEDES  FAVORITOS CLIENTES_DISTINTOS
+------------------------ ---------- ---------- ------------------
+La Clave Nocturna                 2         33                 27
+Neon Pacifico                     2         23                 21
+Bajo Cero                         2         18                 18
+Luna de Barrio                    1         13                 13
+Mirador del Oeste                 2         13                 10
+Brisa Alta                        1         10                 10
+Farol Rojo                        1          7                  7
+Casa Tambor                       1          5                  5
+El Compas                         1          3                  3
+Circuito 22                       1          2                  2
+Patio Sonoro                      1          1                  1
+Puerto Escondido                  1          0                  0
+
+12 rows selected.
+
+=== Q4 - R2: eventos del dueno por audiencia potencial ===
+
+EVENTO                 ESTABLECIMIENTO          FECHA                 SEDES AUDIENCIA_POTENCIAL
+---------------------- ------------------------ ---------------- ---------- -------------------
+Noche de los 2000      La Clave Nocturna        2026-11-16 21:00          2                  27
+Salsa en vivo          Neon Pacifico            2026-11-20 21:00          2                  21
+Sunset sessions        Bajo Cero                2026-11-24 21:00          2                  18
+Perreo retro           Luna de Barrio           2026-11-30 21:00          1                  13
+Duelo de DJs           La Clave Nocturna        2026-11-18 21:00          1                  11
+Noche de timba         Mirador del Oeste        2026-11-26 21:00          2                  10
+Tributo al rock        Brisa Alta               2026-12-06 21:00          1                  10
+Fiesta de neon         Neon Pacifico            2026-11-22 21:00          1                   8
+Open decks             Farol Rojo               2026-12-04 21:00          1                   7
+Karaoke sin pena       Casa Tambor              2026-11-28 21:00          1                   5
+Rumba de disfraces     El Compas                2026-12-02 21:00          1                   3
+Velada acustica        Circuito 22              2026-12-08 21:00          1                   2
+Precarnaval            Patio Sonoro             2026-12-10 21:00          1                   1
+Cierre de semestre     Puerto Escondido         2026-12-12 21:00          1                   0
+
+14 rows selected.
+
+=== Q5 - R2: TOP 10 sedes del dueno por favoritos ===
+
+  POSICION SEDE                                  FAVORITOS
+---------- ------------------------------------ ----------
+         1 La Clave Nocturna - Granada                  22
+         2 Neon Pacifico - Juanchito                    15
+         3 Luna de Barrio                               13
+         4 Bajo Cero - Menga                            12
+         5 La Clave Nocturna - San Antonio              11
+         6 Brisa Alta                                   10
+         7 Mirador del Oeste - San Fernando              9
+         8 Neon Pacifico - El Penon                      8
+         9 Farol Rojo - Ciudad Jardin                    7
+        10 Bajo Cero - Ciudad Jardin                     6
+
+10 rows selected.
+
+=== Q6 - R3: discotecas con reggaeton ===
+
+SEDE                                 TIPO         GENERO       DIRECCION                                            AFORO_ACTUAL  COVER_COP   PROMEDIO    RESENAS
+------------------------------------ ------------ ------------ ---------------------------------------------------- ------------ ---------- ---------- ----------
+Brisa Alta                           Discoteca    Reggaeton    Avenida 6 Norte # 22-44, Menga, Cali                          209      30000       4.25          4
+Luna de Barrio                       Discoteca    Reggaeton    Calle 73 # 19-38, Juanchito, Cali                              98      30000        4.2          5
+La Clave Nocturna - San Antonio      Discoteca    Reggaeton    Carrera 5 # 11-22, San Antonio, Cali                           62      35000          4          4
+Cumbre - Granada                     Discoteca    Reggaeton    Avenida 9 Norte # 31-62, Granada, Cali                        282      30000          4          3
+Circuito 22 - San Fernando           Discoteca    Reggaeton    Calle 5 # 23-46, San Fernando, Cali                           246      35000          4          1
+La Clave Nocturna - Granada          Discoteca    Reggaeton    Avenida 9 Norte # 10-20, Granada, Cali                         25      30000       3.93         15
+Neon Pacifico - Juanchito            Discoteca    Reggaeton    Calle 73 # 12-24, Juanchito, Cali                              99      40000        3.8          5
+La Esquina del Son - Ciudad Jardin   Discoteca    Reggaeton    Carrera 105 # 28-56, Ciudad Jardin, Cali                      171      30000       3.75          4
+Marea - San Antonio                  Discoteca    Reggaeton    Carrera 5 # 32-64, San Antonio, Cali                           59      35000        3.5          2
+Neon Pacifico - El Penon             Discoteca    Reggaeton    Carrera 3 Oeste # 13-26, El Penon, Cali                       136      30000          3          3
+Mirador del Oeste - Granada          Discoteca    Reggaeton    Avenida 9 Norte # 17-34, Granada, Cali                        284      35000        2.5          2
+Puerto Escondido                     Discoteca    Reggaeton    Carrera 5 # 25-50, San Antonio, Cali                           60      30000                     0
+Doble Fondo - Ciudad Jardin          Discoteca    Reggaeton    Carrera 105 # 35-70, Ciudad Jardin, Cali                      170      35000                     0
+Candelazo                            Discoteca    Reggaeton    Calle 5 # 37-74, San Fernando, Cali                           244      30000                     0
+
+14 rows selected.
+
+=== Q7 - R3: TOP 10 sedes segun las preferencias del cliente ===
+
+  POSICION SEDE                                 TIPO         GENEROS_EN_COMUN   PROMEDIO    RESENAS
+---------- ------------------------------------ ------------ ---------------- ---------- ----------
+         1 Brisa Alta                           Discoteca                   2       4.25          4
+         2 La Clave Nocturna - San Antonio      Discoteca                   2          4          4
+         3 La Clave Nocturna - Granada          Discoteca                   2       3.93         15
+         4 Marea - San Antonio                  Discoteca                   2        3.5          2
+         5 Patio Sonoro - Granada               Taberna                     1          5          1
+         6 Guayacan                             Terraza                     1       4.67          3
+         7 Farol Rojo - Ciudad Jardin           Terraza                     1       4.33          3
+         8 Luna de Barrio                       Discoteca                   1        4.2          5
+         9 Cumbre - Granada                     Discoteca                   1          4          3
+        10 Circuito 22 - San Fernando           Discoteca                   1          4          1
+
+10 rows selected.
+
+FIN: ejecucion completa.
+
+######## 2. Demo de docs/guia_ejecucion.md (termina en ROLLBACK)
+
+PROMEDIO
+----------
+      3.93
+
+ID           CAPACITY
+---------- ----------
+SED01              25
+
+Actualizacion: BUP0000009
+
+PL/SQL procedure successfully completed.
+
+ID           CAPACITY
+---------- ----------
+SED01             180
+
+ID           FECHA            NEWCAPACITY AUTOR
+------------ ---------------- ----------- ----------
+UPD001       2026-11-01 19:10          25 ADM01
+BUP0000009   2026-11-22 01:00         180 ADM01
+
+Rollback complete.

@@ -4,7 +4,9 @@
 
 Este documento registra los prompts utilizados como apoyo durante el desarrollo del proyecto **SID-RUMBEA**, indicando el propósito de cada consulta, la herramienta utilizada y el tratamiento realizado sobre las respuestas obtenidas.
 
-El proyecto fue desarrollado de forma manual por el equipo: caso de estudio, historias de usuario, modelo entidad-relación (MER), modelo relacional (MR) y organización del repositorio fueron elaboración propia en Oracle Data Modeler y GitHub. La IA se usó únicamente como apoyo puntual para revisar redacción, resolver dudas conceptuales pequeñas y ayudar con formato Markdown. Ningún artefacto fue generado por IA.
+El uso de IA cambia según el nivel que permite cada entrega. En la **Entrega 3** (nivel 4, IAG completa) se usó IA para generar scripts y documentación, como se registra en el Prompt No. 05.
+
+En las **Entregas 0 a 2** (nivel 2) el proyecto fue desarrollado de forma manual por el equipo: caso de estudio, historias de usuario, modelo entidad-relación (MER), modelo relacional (MR) y organización del repositorio fueron elaboración propia en Oracle Data Modeler y GitHub. La IA se usó únicamente como apoyo puntual para revisar redacción, resolver dudas conceptuales pequeñas y ayudar con formato Markdown. En esas entregas ningún artefacto fue generado por IA.
 
 ---
 
@@ -204,14 +206,121 @@ Actas 4 y 5 con mejor redacción, pero con contenido totalmente del equipo. La I
 
 ---
 
+# Prompt No. 05
+
+## Información general
+
+| Campo                  | Información                                   |
+| ---------------------- | --------------------------------------------- |
+| **Fecha**              | 22/11/2026                                    |
+| **Herramienta**        | Claude Code (Claude Opus 5.5)                 |
+| **Etapa del proyecto** | Entrega 3 (nivel 4, IAG completa)             |
+| **Componente**         | DDL, DML, DQL, PL/SQL y documentación         |
+| **Responsable**        | Jhoan                                         |
+
+## 1. Objetivo del prompt
+
+Completar la Entrega 3 a partir del MR corregido y del DDL exportado de Data Modeler. Se justifica usar IA porque la tarea combina scripts extensos, más de mil datos de prueba coherentes y revisión cruzada entre caso, modelo y reportes.
+
+## 2. Prompts utilizados
+
+Se transcriben como se escribieron.
+
+```text
+mi develop esta al dia con main?
+```
+
+```text
+bien, sobre este repositorio acabe de cambiar el MERentra2rumbeaCorregido, que es el pdf del modelo relacional (MR, no el modelo logico MER, ese ya esta bueno en el repo), pero debemos realizar otras actividades para completar lo que falta de este proyecto, toda la info esta en docs, principalmente en CasoDeEstudio, el resto son bitacoras, y en model/relacional/DFNormYRelacional.pdf, lo que hay que hacer es lo siguiente (mi companiero pablo ya me mando creo que el ddl que lo saco de datamodeler una vez corrigio el MER que te dije al inicio, si antes de empezar te lo paso para que lo pongas en la carpeta que va y asi te contextualices mas de que va el proyecto puedes decirme): 
+
+Realizar script DDL de la base de datos debidamente documentada.
+Realizar script de los inserts (DML) con las tuplas necesarias para generar los reportes
+propuestos inicialmente (y que cada reporte tenga al menos 10 registros).
+Realizar las consultas (DQL) para obtener los reportes definidos (consultas que incluyan agrupamiento, joins (inner join, outer join), ordenamiento y al menos un TOP). Se debe colocar descripción de la consulta en lenguaje natural, como comentario. 
+Documentar los riesgos del uso de herramientas de IAg para este tipo de actividades en un contexto profesional.
+Realizar Script PL/SQL. Realice por lo menos, un procedimiento almacenado, una función y un trigger sobre la base de datos creada. Cada uno de estos elementos debe estar documentado, indicando su funcionalidad.
+Entrega completa del repositorio
+```
+
+```text
+te deje en docs/enunciado un word con el enunciado, esto que vamos a hacer corresponde unicamente a la ENTREGA 3, el resto de entregas se fueron haciendo en este repo y reemplazandolas a medida que ibamos avnzando, como ves, podemos usar toda la IA que queramos
+```
+
+```text
+yyy espera ya te paso el DDL
+```
+
+```text
+ya deje el ddl en src/DDL/aqui esta
+```
+
+Respuestas a las preguntas de la herramienta:
+
+```text
+Modelo: No tocar el modelo
+Restricciones faltantes: Agregarlas
+PDF dañados: Restaurar ambos
+Pruebas: nosotros probamos con sql developer, con un servidor de la U, tenemos cada uno IDS para poder entrar, busco esos recursos? si es donde debemos probar? ahi manteniamos entrando con el acceso al serve de la U desde la U (que es uno) para hacer practicas y borrando siempre la BD que teniamos, pero hay otro que es para acceder al server de la U desde fuera
+```
+
+Prompt posterior, al no encontrar el acceso al servidor de la universidad:
+
+```text
+equipo de 3, esta aprobado, lo que te dije de conectarse al server de la u ni al caso, no encontre eso ademas solo neceitabamos un entorno de ejecucion el cual ya hiciste tu no?
+```
+
+Respuesta a la pregunta de la herramienta:
+
+```text
+Oracle: Sí, Oracle 11g (en Docker)
+```
+
+## 3. Resultado obtenido
+
+* DDL documentado a partir de `DDLProyecto.ddl`, con 8 restricciones adicionales.
+* DML con 1080 inserts de datos ficticios.
+* 7 consultas para los 3 reportes de la Entrega 0.
+* Una función, un procedimiento y un trigger, con script de 24 pruebas.
+* Script maestro y script de limpieza protegido.
+* Documentos de reportes y decisiones, guía de ejecución y riesgos de IAg.
+* Actualización del README y de esta bitácora.
+* Restauración de dos PDF dañados desde sus originales, sin cambiar su contenido.
+
+## 4. Uso de la respuesta
+
+Los artefactos anteriores fueron generados por la IA. El MER, el MR, la normalización y el caso no fueron editados por ella. El DDL exportado por Juan Pablo se conserva intacto.
+
+## 5. Decisiones del equipo sobre la respuesta
+
+* Se rechazó la propuesta de agregar una tabla de recordatorios y cambiar la PK de las visitas.
+* Se aceptaron las restricciones que no cambian tablas ni columnas.
+* Primero se eligió el servidor Oracle de la universidad. Al no tener el acceso, se autorizó un Oracle 11g XE local en Docker.
+
+## 6. Validación
+
+| Validación | Quién | Estado |
+| --- | --- | --- |
+| Sintaxis con el parser de SQL Developer | IA | Realizada |
+| Datos, restricciones y consultas en una réplica SQLite | IA | Realizada, no equivale a Oracle |
+| Ejecución completa y 24 pruebas en Oracle 11g XE | IA, con autorización del equipo | Realizada ([evidencia](./evidencias/ejecucion_oracle11g.txt)) |
+| Revisión y comprensión del código por los tres integrantes | Equipo | **Pendiente** |
+
+## 7. Resultado final
+
+Primera versión completa de los scripts de la Entrega 3, probada en Oracle 11g XE y pendiente de revisión del equipo.
+
+---
+
 # Consideraciones generales sobre el uso de IA
 
-La inteligencia artificial fue utilizada de forma mínima y solo como apoyo. Todo el trabajo central fue humano:
+En la Entrega 3 la IA generó los artefactos listados en el Prompt No. 05. Lo que sigue aplica a las Entregas 0 a 2.
+
+En esas entregas la inteligencia artificial fue utilizada de forma mínima y solo como apoyo. Todo el trabajo central fue humano:
 
 * El caso de estudio, las 20 historias de usuario, el MER y el MR fueron diseñados por el equipo en Oracle SQL Developer Data Modeler.
 * La normalización hasta 3FN, las PK/FK y la restricción de `BRANCH_UPDATE` las definimos nosotros discutiendo en las reuniones.
 * La organización del repositorio, los commits y el README los hicimos manualmente.
 
-Cada respuesta de IA fue revisada y en la mayoría de los casos descartada casi por completo. Solo se aprovecharon correcciones de ortografía, explicaciones conceptuales cortas y sintaxis de Markdown. Ningún diagrama, código o documento fue generado por IA.
+En las Entregas 0 a 2 cada respuesta de IA fue revisada y en la mayoría de los casos descartada casi por completo. Solo se aprovecharon correcciones de ortografía, explicaciones conceptuales cortas y sintaxis de Markdown. En esas entregas ningún diagrama, código o documento fue generado por IA.
 
 El registro anterior permite evidenciar la trazabilidad y diferenciar entre las sugerencias puntuales de la IA y las decisiones finales tomadas por el equipo.

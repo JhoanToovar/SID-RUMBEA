@@ -10,11 +10,11 @@ Proyecto académico desarrollado para la asignatura **Sistemas Intensivos en Dat
 
 ## Integrantes
 
-| Integrante   | GitHub                                              |
-| ------------ | --------------------------------------------------- |
-| Jhoan Tovar  |  [JhoanToovar](https://github.com/JhoanToovar) |
-| Juan Pablo   |   [ArkJuanpa](https://github.com/ArkJuanpa) |
-| Miguel Pérez | [miguelperezdev](https://github.com/miguelperezdev) |
+| Integrante | Código | GitHub |
+| --- | --- | --- |
+| Jhoan Manuel Tovar Rendon | A00408185 | [JhoanToovar](https://github.com/JhoanToovar) |
+| Juan Pablo Martinez Rosero | A00407215 | [ArkJuanpa](https://github.com/ArkJuanpa) |
+| Miguel Pérez | *Pendiente* | [miguelperezdev](https://github.com/miguelperezdev) |
 
 ---
 
@@ -57,35 +57,45 @@ El repositorio se encuentra organizado de acuerdo con las entregas establecidas 
 SID-RUMBEA/
 │
 ├── README.md
+├── .gitattributes
 │
 ├── docs/
-│   ├── caso_estudio.pdf
+│   ├── CasoDeEstudio.pdf
+│   ├── enunciado/
+│   ├── reportes_y_decisiones.md
+│   ├── guia_ejecucion.md
+│   ├── evidencias/
+│   ├── riesgos_iag.md
 │   ├── bitacora_prompts.md
 │   ├── bitacora_seguimiento.md
 │   ├── acuerdos_trabajo_equipo.md
 │   └── actas_de_reunion/
-│       ├── acta_1.md
-│       ├── acta_2.md
-│       ├── acta_3.md
-│       ├── acta_4.md
-│       └── acta_5.md
 │
 ├── model/
 │   ├── conceptual/
+│   │   ├── MERentrega2rumbea.pdf
 │   │   ├── correccionMerEntrega1.pdf
+│   │   ├── Equipo19_retroalimentacion.pdf
 │   │   └── rumbea/
 │   │
 │   └── relacional/
-│       ├── MRRumbea.pdf
-│       ├── Relaciones.pdf
+│       ├── MERentrega2rumbeaCorregido.pdf   (es el MR)
+│       ├── DFNormYRelaciones.pdf
 │       └── rumbea/
 │
 └── src/
-    ├── rumbea.dmd
+    ├── ejecutar_todo.sql
     ├── DDL/
+    │   ├── DDLProyecto.ddl                  (exportación original)
+    │   ├── rumbea_ddl.sql
+    │   └── rumbea_limpieza.sql
     ├── DML/
+    │   └── rumbea_dml.sql
     ├── DQL/
+    │   └── rumbea_dql.sql
     └── PL-SQL/
+        ├── rumbea_plsql.sql
+        └── rumbea_pruebas.sql
 ```
 
 > La estructura se actualizará progresivamente a medida que avance el proyecto.
@@ -100,7 +110,31 @@ La documentación del proyecto se encuentra en la carpeta [`docs`](./docs).
 
 Documento que describe la situación problema seleccionada, su contexto, objetivo y alcance.
 
-[Consultar caso de estudio](./docs/caso_estudio.pdf)
+[Consultar caso de estudio](./docs/CasoDeEstudio.pdf)
+
+## Reportes y decisiones de implementación
+
+Los tres reportes definidos en la Entrega 0, las consultas que los resuelven y las limitaciones conocidas.
+
+[Consultar reportes y decisiones](./docs/reportes_y_decisiones.md)
+
+## Guía de ejecución
+
+Cómo crear, probar y limpiar la base de datos desde SQL Developer.
+
+[Consultar guía de ejecución](./docs/guia_ejecucion.md)
+
+## Evidencia de ejecución
+
+Salida real de la creación de la base, las 24 pruebas y los 7 reportes en Oracle 11g XE.
+
+[Consultar evidencia](./docs/evidencias/ejecucion_oracle11g.txt)
+
+## Riesgos del uso de IAg
+
+Análisis de riesgos del uso de IA generativa en un contexto profesional.
+
+[Consultar riesgos de IAg](./docs/riesgos_iag.md)
 
 ## Bitácora de prompts
 
@@ -138,7 +172,7 @@ El Modelo Entidad-Relación representa conceptualmente la información del caso 
 
 El modelo fue desarrollado utilizando **Oracle SQL Developer Data Modeler**.
 
-[Consultar Modelo Entidad-Relación](./model/conceptual/)
+[Consultar MER (PDF)](./model/conceptual/MERentrega2rumbea.pdf) · [Carpeta y fuentes](./model/conceptual/)
 
 ## Modelo Relacional
 
@@ -146,17 +180,17 @@ El Modelo Relacional corresponde a la transformación del modelo conceptual y re
 
 El modelo será normalizado hasta **Tercera Forma Normal (3FN)**.
 
-[Consultar Modelo Relacional](./model/relacional/)
+[Consultar MR (PDF)](./model/relacional/MERentrega2rumbeaCorregido.pdf) · [Normalización](./model/relacional/DFNormYRelaciones.pdf) · [Carpeta y fuentes](./model/relacional/)
 
 ---
 
 # Implementación
 
-Los scripts de implementación se encuentran en la carpeta [`src`](./src).
+Los scripts de implementación se encuentran en la carpeta [`src`](./src). Para crear y probar todo, abrir [`ejecutar_todo.sql`](./src/ejecutar_todo.sql) en SQL Developer y pulsar F5 (ver la [guía](./docs/guia_ejecucion.md)).
 
 ## DDL
 
-Contendrá los scripts utilizados para la creación de la estructura de la base de datos.
+Contiene los scripts utilizados para la creación de la estructura de la base de datos.
 
 Incluye:
 
@@ -167,21 +201,21 @@ Incluye:
 * Tipos de datos.
 * Otras estructuras necesarias para la implementación.
 
-[Consultar scripts DDL](./src/DDL/)
+[Consultar script DDL](./src/DDL/rumbea_ddl.sql)
 
 ## DML
 
-Contendrá los scripts utilizados para insertar los datos necesarios para la operación y generación de los reportes definidos en el proyecto.
+Contiene los scripts utilizados para insertar los datos necesarios para la operación y generación de los reportes definidos en el proyecto.
 
-Los datos deberán permitir la ejecución y validación de las consultas desarrolladas.
+Los datos permiten la ejecución y validación de las consultas desarrolladas.
 
-[Consultar scripts DML](./src/DML/)
+[Consultar script DML](./src/DML/rumbea_dml.sql)
 
 ## DQL
 
-Contendrá las consultas SQL utilizadas para obtener los reportes definidos para el sistema.
+Contiene las consultas SQL utilizadas para obtener los reportes definidos para el sistema.
 
-Las consultas contemplarán, según los requerimientos del proyecto:
+Las consultas contemplan, según los requerimientos del proyecto:
 
 * `JOIN`
 * `INNER JOIN`
@@ -190,13 +224,13 @@ Las consultas contemplarán, según los requerimientos del proyecto:
 * Ordenamiento mediante `ORDER BY`
 * Consultas con selección de los registros superiores (`TOP`)
 
-Cada consulta estará acompañada de una descripción en lenguaje natural que explique su propósito.
+Cada consulta está acompañada de una descripción en lenguaje natural que explique su propósito.
 
-[Consultar scripts DQL](./src/DQL/)
+[Consultar script DQL](./src/DQL/rumbea_dql.sql)
 
 ## PL/SQL
 
-Contendrá los elementos procedimentales desarrollados sobre la base de datos.
+Contiene los elementos procedimentales desarrollados sobre la base de datos.
 
 Como mínimo, el proyecto contempla:
 
@@ -204,9 +238,9 @@ Como mínimo, el proyecto contempla:
 * Una función.
 * Un trigger.
 
-Cada elemento estará documentado indicando su propósito, funcionamiento y comportamiento dentro del sistema.
+Cada elemento está documentado indicando su propósito, funcionamiento y comportamiento dentro del sistema.
 
-[Consultar scripts PL/SQL](./src/PL-SQL/)
+[Consultar script PL/SQL](./src/PL-SQL/rumbea_plsql.sql) · [Pruebas](./src/PL-SQL/rumbea_pruebas.sql)
 
 ---
 
@@ -296,6 +330,7 @@ Esta etapa comprende:
 | Git                               | Control de versiones                         |
 | GitHub                            | Hospedaje y colaboración del repositorio     |
 | Oracle SQL Developer Data Modeler | Diseño de modelos de datos                   |
+| Docker                            | Oracle 11g XE local para ejecución y pruebas |
 | Oracle Database                   | Implementación de la base de datos           |
 | SQL                               | Definición, manipulación y consulta de datos |
 | PL/SQL                            | Desarrollo de lógica procedimental           |
@@ -329,11 +364,12 @@ git push origin main
 | Modelo Entidad-Relación | Completado                    |
 | Modelo Relacional       | Completado                  |
 | Normalización 3FN       | Completado                  |
-| DDL                     | Pendiente                     |
-| DML                     | Pendiente                     |
-| DQL                     | Pendiente                     |
-| PL/SQL                  | Pendiente                     |
-| Documentación final     | Pendiente                     |
+| DDL                     | Probado en Oracle 11g XE               |
+| DML                     | Probado en Oracle 11g XE               |
+| DQL                     | Probado en Oracle 11g XE               |
+| PL/SQL                  | Probado en Oracle 11g XE               |
+| Riesgos de IAg          | Escrito, pendiente de revisión del equipo |
+| Documentación final     | En proceso                    |
 
 ---
 

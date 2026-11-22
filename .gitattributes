@@ -1,0 +1,7 @@
+# Archivos binarios: Git no debe convertir sus bytes ni sus saltos de linea
+*.pdf  binary
+*.docx binary
+*.pptx binary
+*.zip  binary
+*.png  binary
+*.jpg  binary
