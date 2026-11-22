@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EVENTS_ESTABLISHMENTS_FK" directorySegmentName="seg_0" id="BBD809FD-B8BF-4921-7841-A31611BC305E">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>F7FA3770-8E75-080B-B046-CD083905611D</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<sourcePk>6B9B013D-FB50-08D3-9021-B810A8A13F1A</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5B0DEB9E-33CD-5AD0-CF69-7D2C5434C6AC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>827E5A47-28D1-9427-A3C7-58B6B47C0ADB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

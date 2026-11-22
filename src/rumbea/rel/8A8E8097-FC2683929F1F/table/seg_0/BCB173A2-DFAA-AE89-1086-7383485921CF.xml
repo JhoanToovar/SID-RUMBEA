@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BCB173A2-DFAA-AE89-1086-7383485921CF" name="CLIENT_EVENT_REMINDERS">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>E526D029-9498-D033-851F-B8D1676DF275</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLIENT_id" id="B86A26B5-977B-90E6-0788-042E0118A75F">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>07701695-F178-E306-CD42-255DF61B2C22</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF2733C8-0DCC-6E2F-0450-C875D2063071" referredColumn="90A1BF4F-54FB-DA5D-57F3-086C3FDF6CD8"/>
+</associations>
+</Column>
+<Column name="EVENT_id" id="8BD92A8D-E3E9-BDB6-0CC3-929B06042702">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>94634450-ECEC-6EFE-5617-EC418B064EDC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8913DED5-5CEE-5465-5884-A3351C280B29" referredColumn="2328169F-086F-8B1E-C740-19FEB5F18A51"/>
+</associations>
+</Column>
+<Column name="reminderDate" id="8D31C90B-4320-E954-2132-712F401E5513">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>8D841E7B-C3B2-FAC3-069D-0CD2FEEE0076</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>051C59B0-DF21-9DEC-1480-7EC14028A611</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="176A8181-FBBF-2B5A-9275-28CF4D226818" name="CLIENT_EVENT_REMINDER_PK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>E704F581-C9CA-3980-F444-76BCA4B4FF74</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B86A26B5-977B-90E6-0788-042E0118A75F"/>
+<colUsage columnID="8BD92A8D-E3E9-BDB6-0CC3-929B06042702"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="736CFEF5-9067-EA4E-220D-5C266C57E883" name="REMINDER_CLIENT_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B86A26B5-977B-90E6-0788-042E0118A75F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="87D113A1-A18E-3432-12C1-2C2DDC87E3E2" name="REMINDER_EVENT_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8BD92A8D-E3E9-BDB6-0CC3-929B06042702"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="58897FFA-3FCB-C2AC-3280-5D702E2175F0" name="VISIT_PROFILES">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>99E79E0D-5AD7-9520-67B7-5FFF8A0EF7B7</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="2D9CEE9A-78DC-41D7-F25B-98AE1715542A">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>4FA8ECB2-1667-261A-8020-B64D95D1DA39</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="visitDate" id="8AD94A2F-08B4-955C-4D90-104415D79322">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>5B1D03D5-7FF0-DE29-5640-8DE2D653B39B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>051C59B0-DF21-9DEC-1480-7EC14028A611</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="visitTimeIn" id="80EE423E-1197-7A71-6DAF-C98F9A5FC65A">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>ABEAC280-CD5C-5D0D-6E92-7E8E27EA0ACC</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>99100531-161B-EBD1-E669-AB83A228E030</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="interactionSeconds" id="33ED4573-2E26-3AE0-D2F4-371DFA487DBB">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>08857B5B-43EC-EE63-DD4F-49189E255C36</importedID>
+<constraintName>VISIT_PROFILES_SECONDS_CK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>D4AB3BEA-5789-33ED-7217-05A9CDA7F2E0</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 21c" definition="interactionSeconds &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_id" id="A6AF7B66-ABB3-76D2-2257-128958E73F38">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>2D2DD4C2-9B5E-7CF2-3EF8-58E1DF6820AF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="13F05A6F-417E-EE9A-6A69-912288678DB5" referredColumn="90A1BF4F-54FB-DA5D-57F3-086C3FDF6CD8"/>
+</associations>
+</Column>
+<Column name="BRANCH_id" id="472135E0-BE69-97D7-F190-9F066162EAFD">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>7EAE9325-191E-BFB9-7AE7-FC086D1DE332</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="57D59877-3CDD-FCB3-A98C-DC9A55A96B57" referredColumn="DF904EBD-7083-FB1F-A28A-ED7AF9D1A553"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F7258C5D-DCC1-5250-0434-8ED12783F3AB" name="VISIT_PROFILE_PK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>CF103DB4-ACEE-3D70-984D-538EF376B492</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D9CEE9A-78DC-41D7-F25B-98AE1715542A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2050965-16C2-9153-7207-811544684F7D" name="VISIT_PROFILE_BRANCH_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="472135E0-BE69-97D7-F190-9F066162EAFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BB95D382-7DED-5CCB-42C3-D8F5088DB9A8" name="VISIT_PROFILE_CLIENT_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6AF7B66-ABB3-76D2-2257-128958E73F38"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="VISIT_PROFILES_TIME_CK" directorySegmentName="seg_0" id="B5013E27-59F9-7980-8ED3-1E671DFFA3F3">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>F4ED0D51-BE45-67E3-78C5-6AD9A197565D</importedID>
+<rule><![CDATA[visitTimeIn BETWEEN 0 AND 2359 AND MOD(visitTimeIn, 100) < 60]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="VISIT_PROFILES_SECONDS_CK" directorySegmentName="seg_0" id="31C20F27-EC86-14DA-461A-EAE1C2B090C5">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 19:09:34 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<rule><![CDATA[interactionSeconds > 0]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>
