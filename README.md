@@ -58,16 +58,17 @@ SID-RUMBEA/
 │
 ├── README.md
 ├── .gitattributes
+├── .gitignore
 │
 ├── docs/
-│   ├── CasoDeEstudio.pdf
-│   ├── caso_estudio_ajustes_entrega3.md   (HU21-HU23 y reportes)
+│   ├── CasoDeEstudio.pdf                  (incluye HU21-HU23 y reportes)
 │   ├── enunciado/
 │   │   └── enunciado_entrega3.txt
 │   ├── normalizacion_entrega3.md
 │   ├── reportes_y_decisiones.md
 │   ├── guia_ejecucion.md
 │   ├── evidencias/
+│   │   └── ejecucion_oracle11g.txt
 │   ├── riesgos_iag.md
 │   ├── bitacora_prompts.md
 │   ├── bitacora_seguimiento.md
@@ -79,20 +80,17 @@ SID-RUMBEA/
 │   │   ├── MERentrega3rumbea.pdf            (MER vigente)
 │   │   ├── MERentrega2rumbea.pdf            (historico)
 │   │   ├── correccionMerEntrega1.pdf
-│   │   ├── Equipo19_retroalimentacion.pdf   (retroalimentacion del MER)
-│   │   └── rumbea/
+│   │   └── Equipo19_retroalimentacion.pdf   (retroalimentacion del MER)
 │   │
 │   └── relacional/
 │       ├── MRentrega3rumbea.pdf             (MR vigente)
 │       ├── DFNormYRelaciones_entrega3.pdf   (normalizacion vigente)
-│       ├── Rumbea_correcciones_MR.pdf       (retroalimentacion del MR)
-│       ├── MERentrega2rumbeaCorregido.pdf   (MR de la Entrega 2, historico)
-│       ├── DFNormYRelaciones.pdf            (normalizacion de la Entrega 2, historico)
-│       └── rumbea/
+│       ├── MRentrega2rumbeaCorregido.pdf    (MR de la Entrega 2, historico)
+│       └── DFNormYRelaciones.pdf            (normalizacion de la Entrega 2, historico)
 │
 └── src/
     ├── ejecutar_todo.sql
-    ├── rumbea.dmd + rumbea/                 (proyecto Data Modeler de la Entrega 3)
+    ├── rumbea.dmd + rumbea/                 (proyecto Data Modeler vigente: MER y MR)
     ├── DDL/
     │   ├── DDLProyecto.ddl                  (exportacion original)
     │   ├── rumbea_ddl.sql
@@ -117,7 +115,7 @@ La documentación del proyecto se encuentra en la carpeta [`docs`](./docs).
 
 Documento que describe la situación problema seleccionada, su contexto, objetivo y alcance.
 
-[Consultar caso de estudio](./docs/CasoDeEstudio.pdf) · [Ajustes de la Entrega 3 (HU21 a HU23 y reportes)](./docs/caso_estudio_ajustes_entrega3.md)
+[Consultar caso de estudio](./docs/CasoDeEstudio.pdf) (incluye los ajustes de la Entrega 3: HU21 a HU23 y los reportes)
 
 ## Enunciado
 
@@ -183,7 +181,7 @@ El Modelo Entidad-Relación representa conceptualmente la información del caso 
 
 El modelo fue desarrollado utilizando **Oracle SQL Developer Data Modeler**.
 
-[Consultar MER (PDF)](./model/conceptual/MERentrega3rumbea.pdf) · [Retroalimentación](./model/conceptual/Equipo19_retroalimentacion.pdf) · [Carpeta y fuentes](./model/conceptual/)
+[Consultar MER (PDF)](./model/conceptual/MERentrega3rumbea.pdf) · [Retroalimentación](./model/conceptual/Equipo19_retroalimentacion.pdf) · [Proyecto Data Modeler](./src/rumbea.dmd)
 
 ## Modelo Relacional
 
@@ -191,7 +189,7 @@ El Modelo Relacional corresponde a la transformación del modelo conceptual y re
 
 El modelo está normalizado hasta **Tercera Forma Normal (3FN)**, con una excepción justificada: `BRANCH_EVENTS` conserva `ESTABLISHMENT_id` para garantizar con FK que la sede y el evento sean del mismo establecimiento (ver la normalización).
 
-[Consultar MR (PDF)](./model/relacional/MRentrega3rumbea.pdf) · [Normalización (PDF)](./model/relacional/DFNormYRelaciones_entrega3.pdf) · [Normalización (Markdown)](./docs/normalizacion_entrega3.md) · [Correcciones del profesor](./model/relacional/Rumbea_correcciones_MR.pdf) · [Carpeta y fuentes](./model/relacional/)
+[Consultar MR (PDF)](./model/relacional/MRentrega3rumbea.pdf) · [Normalización (PDF)](./model/relacional/DFNormYRelaciones_entrega3.pdf) · [Normalización (Markdown)](./docs/normalizacion_entrega3.md) · [Proyecto Data Modeler](./src/rumbea.dmd)
 
 ---
 
@@ -367,20 +365,20 @@ git push origin main
 
 # Estado actual del proyecto
 
-| Componente              | Estado                        |
-| ----------------------- | ----------------------------- |
-| Caso de estudio         | Completado                    |
-| Requerimientos          | Completado / En actualización |
-| Acuerdos de trabajo     | Completado                    |
-| Modelo Entidad-Relación | Completado                    |
-| Modelo Relacional       | Completado                    |
-| Normalización 3FN       | Completado                  |
-| DDL                     | Probado en Oracle 11g XE               |
-| DML                     | Probado en Oracle 11g XE               |
-| DQL                     | Probado en Oracle 11g XE               |
-| PL/SQL                  | Probado en Oracle 11g XE               |
-| Riesgos de IAg          | Completado                    |
-| Documentación final     | Completado                    |
+| Componente              | Estado                   |
+| ----------------------- | ------------------------ |
+| Caso de estudio         | Completado               |
+| Requerimientos          | Completado               |
+| Acuerdos de trabajo     | Completado               |
+| Modelo Entidad-Relación | Completado               |
+| Modelo Relacional       | Completado               |
+| Normalización 3FN       | Completado               |
+| DDL                     | Probado en Oracle 11g XE |
+| DML                     | Probado en Oracle 11g XE |
+| DQL                     | Probado en Oracle 11g XE |
+| PL/SQL                  | Probado en Oracle 11g XE |
+| Riesgos de IAg          | Completado               |
+| Documentación final     | Completado               |
 
 ---
 

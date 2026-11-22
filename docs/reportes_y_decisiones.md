@@ -32,7 +32,7 @@ En la primera versión de la Entrega 3 se decidió no cambiar el modelo, y eso d
 2. **El historial de accesos es completo (R1).** `VISIT_PROFILES` tiene PK propia (`id`), así que un cliente puede visitar el perfil de una sede muchas veces, y guarda `interactionSeconds`, el tiempo de interacción que pidió el profesor en la retroalimentación del MER. Q1 muestra accesos, clientes distintos y tiempo promedio por día.
 3. **No se sabe cuál género predomina (R3).** Esto se mantiene: Q6 filtra por género asociado a la sede, como dice la HU12.
 
-Los ajustes al caso de estudio (HU21 a HU23 y los reportes) están en [ajustes al caso de estudio](./caso_estudio_ajustes_entrega3.md), y la normalización actualizada en [normalización Entrega 3](./normalizacion_entrega3.md).
+Los ajustes al caso de estudio (HU21 a HU23 y los reportes) están en el [caso de estudio](./CasoDeEstudio.pdf), y la normalización actualizada en [normalización Entrega 3](./normalizacion_entrega3.md).
 
 ## 4. Restricciones agregadas en el DDL
 
