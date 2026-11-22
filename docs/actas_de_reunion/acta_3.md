@@ -6,7 +6,7 @@
 | ------------------- | -------------------------------------- |
 | **Proyecto**        | SID-RUMBEA                             |
 | **Reunión**         | Validación del modelo entidad-relación |
-| **Fecha**           | Jueves 4 de septiembre de 2026         |
+| **Fecha**           | Viernes 4 de septiembre de 2026        |
 | **Hora**            | 10:00 a. m.                            |
 | **Lugar**           | CAMBAS, Universidad Icesi              |
 | **Asistentes**      | Jhoan, Juan Pablo                      |
