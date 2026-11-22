@@ -241,6 +241,15 @@ Registro consolidado del seguimiento. Cada entrada resume qué se cumplió, qué
 * Miguel: DQL/PL/SQL, evidencia y demo (22/11/2026).
 * Los tres: ensayo, preguntas cruzadas y repaso del trigger y Q7 (22/11/2026).
 
+### Ajuste posterior al cierre — 22/11/2026
+
+En la revisión final se revirtieron dos decisiones de esta sesión (ver Prompt No. 11 de la bitácora de prompts):
+
+* Se agregó la tabla `CLIENT_EVENT_REMINDERS`: Q4 cuenta recordatorios reales.
+* `VISIT_PROFILES` tiene PK propia y tiempo de interacción: Q1 muestra el historial completo.
+* Se agregaron el CHECK de `stateActive`, la normalización actualizada (`docs/normalizacion_entrega3.md`) y los ajustes al caso (HU21 a HU23).
+* **Pendiente del equipo:** llevar los cambios a Data Modeler, volver a exportar el MER, el MR y `DDLProyecto.ddl`, y regenerar la evidencia en Oracle.
+
 ---
 
 ## Estado global a 22/11/2026
@@ -250,10 +259,10 @@ Registro consolidado del seguimiento. Cada entrada resume qué se cumplió, qué
 | Caso de estudio + HUs | Completado | `docs/CasoDeEstudio.pdf`, Acta 1 y 3 |
 | Acuerdos de equipo | Completado | `docs/acuerdos_trabajo_equipo.md` |
 | MER | Completado | `model/conceptual/`, Acta 3 |
-| MR + normalización 3FN | Completado | `model/relacional/MERentrega2rumbeaCorregido.pdf`, Acta 4 y 5 |
+| MR + normalización 3FN | Completado (normalización actualizada a E3) | `model/relacional/MRentrega3rumbea.pdf`, `docs/normalizacion_entrega3.md`, Acta 4 y 5 |
 | DDL / DML / DQL / PL/SQL | Completado y probado en Oracle 11g XE | `src/`, [evidencia](./evidencias/ejecucion_oracle11g.txt), Actas 6-10 |
 | Reportes y decisiones | Completado | `docs/reportes_y_decisiones.md`, Acta 7 |
-| Riesgos de IAg | Completado, pendiente revisión del equipo | `docs/riesgos_iag.md`, Acta 9 |
+| Riesgos de IAg | Completado | `docs/riesgos_iag.md`, Acta 9 |
 | Actas 1-10 | Completado | `docs/actas_de_reunion/` |
 | Bitácora de consultas (IAg) | Completado | `docs/bitacora_prompts.md`, Acta 9 |
-| Documentación final | En proceso (revisión de comprensión y ensayo) | `README.md`, `docs/guia_ejecucion.md`, Acta 10 |
+| Documentación final | Completada; falta regenerar evidencia y PDFs del modelo | `README.md`, `docs/guia_ejecucion.md`, Acta 10 |

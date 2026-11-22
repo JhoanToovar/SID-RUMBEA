@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EF3661B2-9894-2CB7-FEB2-FDABF30F6E3B" containerWithKeyObject="C8B184FC-610F-DA2F-3F0C-8760E1C01E58" localFKIndex="855005B9-F60B-A928-9E32-3DF09A510BF1" name="BRANCH_UPDATE_ADMIN_FK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>620375CB-C736-1158-C3EF-A12132FD027D</importedID>
+<referredTableLongName>ADMINS</referredTableLongName>
+<arc>35DF374E-BFA7-7FF8-AA79-861D343603CF</arc>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>27E2C70E-02DE-7335-3483-E102C36EF951</referredTableID>
+<keyObject>76B16F32-77C6-5B55-0F08-90DF52FA471E</keyObject>
+<referredKeyID>76B16F32-77C6-5B55-0F08-90DF52FA471E</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

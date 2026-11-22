@@ -2,10 +2,14 @@
 -- RUMBEA - Entrega 3 - Script DDL
 -- Motor: Oracle 11g Release 2 o superior
 --
--- Origen: DDLProyecto.ddl, exportado de Data Modeler 24.3.1. Tablas, columnas,
---   tipos y restricciones son los mismos. Este script agrega:
+-- Origen: DDLProyecto.ddl, exportado de Data Modeler 24.3.1. Este script es la
+--   version oficial: si el .ddl y este archivo difieren, manda este. Agrega:
 --     * orden por modulo y documentacion de tablas, columnas y reglas
 --     * 8 restricciones de negocio, marcadas con [E3]
+--     * correcciones posteriores a la revision, marcadas con [E3-R]:
+--         VISIT_PROFILES con id propio y tiempo de interaccion
+--         tabla CLIENT_EVENT_REMINDERS para "recordar evento" (Reporte 2)
+--         CHECK de stateActive y de la hora de acceso
 --     * una verificacion previa para no chocar con otros objetos del esquema
 --
 -- Notas:
@@ -30,7 +34,7 @@ BEGIN
     'BRANCH_TYPES', 'BRANCH_SCHEDULES', 'LINK_OF_INTERESTS',
     'BRANCH_UPDATES', 'MUSIC_GENRES', 'BRANCH_MUSIC_GENRES',
     'CLIENT_MUSIC_PREFERENCES', 'EVENTS', 'BRANCH_EVENTS',
-    'FAVORITES', 'REVIEWS', 'VISIT_PROFILES',
+    'FAVORITES', 'REVIEWS', 'VISIT_PROFILES', 'CLIENT_EVENT_REMINDERS',
     'RUMBEA_UPDATE_SEQ', 'FN_RUMBEA_PROMEDIO_SEDE', 'PR_RUMBEA_ACTUALIZAR_SEDE',
     'TRG_RUMBEA_BRANCH_UPDATE');
 
@@ -57,7 +61,9 @@ BEGIN
     'REVIEW_CLIENT_FK', 'VISIT_PROFILE_BRANCH_FK', 'VISIT_PROFILE_CLIENT_FK',
     'BRANCHS_CAPACITY_CK', 'BRANCHS_COVER_CK', 'BRANCH_UPDATES_CAPACITY_CK',
     'BRANCH_UPDATES_COVER_CK', 'EVENTS_SPECIAL_COVER_CK', 'REVIEWS_RATING_CK',
-    'BRANCH_TYPES_BRANCH_UN', 'BRANCH_SCHEDULES_DAY_UN');
+    'BRANCH_TYPES__UN', 'BRANCH_SCHEDULES_DAY_UN', 'ADMINS_STATE_CK',
+    'VISIT_PROFILES_TIME_CK', 'VISIT_PROFILES_SECONDS_CK', 'CLIENT_EVENT_REMINDER_PK',
+    'REMINDER_CLIENT_FK', 'REMINDER_EVENT_FK');
 
   IF v_objetos + v_restricciones > 0 THEN
     RAISE_APPLICATION_ERROR(-20100,
@@ -158,7 +164,7 @@ CREATE TABLE ADMINS
 
 COMMENT ON TABLE ADMINS IS 'RUMBEA - Administradores, cada uno asignado a una sede (HU3)';
 COMMENT ON COLUMN ADMINS.id IS 'Administrador, es el mismo id de USERS';
-COMMENT ON COLUMN ADMINS.stateActive IS 'Estado: ACTIVO o INACTIVO';
+COMMENT ON COLUMN ADMINS.stateActive IS 'Estado: ACTIVO o INACTIVO (el booleano del caso)';
 COMMENT ON COLUMN ADMINS.lastConnectionDate IS 'Fecha y hora de ultima conexion';
 COMMENT ON COLUMN ADMINS.BRANCH_id IS 'Unica sede que administra, FK a BRANCHS';
 COMMENT ON COLUMN ADMINS.role IS 'Siempre ADMIN';
@@ -172,6 +178,12 @@ ALTER TABLE ADMINS
 
 ALTER TABLE ADMINS
     ADD CONSTRAINT ADMINS__UN UNIQUE ( BRANCH_id );
+
+-- [E3-R] El caso define el estado como booleano: solo dos valores posibles.
+--        El trigger de BRANCH_UPDATES depende de que el valor sea exactamente ACTIVO.
+ALTER TABLE ADMINS
+    ADD CONSTRAINT ADMINS_STATE_CK
+    CHECK ( stateActive IN ('ACTIVO','INACTIVO') );
 
 -- ==========================================================================
 -- 2. ESTABLECIMIENTOS Y SEDES
@@ -251,7 +263,7 @@ ALTER TABLE BRANCH_TYPES
 
 -- [E3] El caso define un unico tipo por sede
 ALTER TABLE BRANCH_TYPES
-    ADD CONSTRAINT BRANCH_TYPES_BRANCH_UN
+    ADD CONSTRAINT BRANCH_TYPES__UN
     UNIQUE ( BRANCH_id );
 
 -- BRANCH_SCHEDULES: Horario por dia, resultado de la descomposicion 1FN de BRANCH
@@ -497,24 +509,59 @@ ALTER TABLE REVIEWS
     ADD CONSTRAINT REVIEWS_RATING_CK
     CHECK ( rating BETWEEN 1 AND 5 );
 
--- VISIT_PROFILES: Acceso de un cliente al perfil de una sede (Reporte 1)
---   Regla: Limite del MR: un solo registro por pareja cliente y sede
+-- VISIT_PROFILES: Cada acceso de un cliente al perfil de una sede (Reporte 1, HU22)
+--   Regla: [E3-R] PK propia: un cliente puede visitar el perfil de una sede muchas
+--          veces. La PK anterior (CLIENT_id, BRANCH_id) solo permitia una visita
+--          en toda la historia, el mismo problema que se corrigio en REVIEWS.
+--   Regla: [E3-R] guarda el tiempo de interaccion pedido en la retroalimentacion
 CREATE TABLE VISIT_PROFILES
     (
-     visitDate   DATE  NOT NULL ,
-     visitTimeIn INTEGER  NOT NULL ,
-     CLIENT_id   VARCHAR2 (10 CHAR)  NOT NULL ,
-     BRANCH_id   VARCHAR2 (10 CHAR)  NOT NULL
+     id                 VARCHAR2 (10 CHAR)  NOT NULL ,
+     visitDate          DATE  NOT NULL ,
+     visitTimeIn        INTEGER  NOT NULL ,
+     interactionSeconds NUMBER (6)  NOT NULL ,
+     CLIENT_id          VARCHAR2 (10 CHAR)  NOT NULL ,
+     BRANCH_id          VARCHAR2 (10 CHAR)  NOT NULL
     );
 
-COMMENT ON TABLE VISIT_PROFILES IS 'RUMBEA - Acceso de un cliente al perfil de una sede (Reporte 1)';
+COMMENT ON TABLE VISIT_PROFILES IS 'RUMBEA - Cada acceso de un cliente al perfil de una sede (Reporte 1, HU22)';
+COMMENT ON COLUMN VISIT_PROFILES.id IS 'Identificador unico del acceso';
 COMMENT ON COLUMN VISIT_PROFILES.visitDate IS 'Fecha del acceso';
 COMMENT ON COLUMN VISIT_PROFILES.visitTimeIn IS 'Hora del acceso como entero HH24MI, ejemplo 2130';
+COMMENT ON COLUMN VISIT_PROFILES.interactionSeconds IS 'Tiempo que el cliente permanecio en el perfil, en segundos';
 COMMENT ON COLUMN VISIT_PROFILES.CLIENT_id IS 'Cliente asociado, FK a CLIENTS';
 COMMENT ON COLUMN VISIT_PROFILES.BRANCH_id IS 'Sede asociada, FK a BRANCHS';
 
 ALTER TABLE VISIT_PROFILES
-    ADD CONSTRAINT VISIT_PROFILE_PK PRIMARY KEY ( CLIENT_id, BRANCH_id );
+    ADD CONSTRAINT VISIT_PROFILE_PK PRIMARY KEY ( id );
+
+-- [E3-R] La hora debe ser valida: 0000 a 2359 y minutos menores a 60
+ALTER TABLE VISIT_PROFILES
+    ADD CONSTRAINT VISIT_PROFILES_TIME_CK
+    CHECK ( visitTimeIn BETWEEN 0 AND 2359 AND MOD(visitTimeIn, 100) < 60 );
+
+-- [E3-R] Una visita dura al menos un segundo
+ALTER TABLE VISIT_PROFILES
+    ADD CONSTRAINT VISIT_PROFILES_SECONDS_CK
+    CHECK ( interactionSeconds > 0 );
+
+-- CLIENT_EVENT_REMINDERS: Eventos que un cliente pidio recordar (Reporte 2, HU23)
+--   Regla: [E3-R] Relacion M:N entre clientes y eventos. Un cliente activa el
+--          recordatorio de un evento una sola vez.
+CREATE TABLE CLIENT_EVENT_REMINDERS
+    (
+     CLIENT_id    VARCHAR2 (10 CHAR)  NOT NULL ,
+     EVENT_id     VARCHAR2 (10 CHAR)  NOT NULL ,
+     reminderDate DATE  NOT NULL
+    );
+
+COMMENT ON TABLE CLIENT_EVENT_REMINDERS IS 'RUMBEA - Eventos que un cliente pidio recordar (Reporte 2, HU23)';
+COMMENT ON COLUMN CLIENT_EVENT_REMINDERS.CLIENT_id IS 'Cliente asociado, FK a CLIENTS';
+COMMENT ON COLUMN CLIENT_EVENT_REMINDERS.EVENT_id IS 'Evento, FK a EVENTS';
+COMMENT ON COLUMN CLIENT_EVENT_REMINDERS.reminderDate IS 'Fecha en que activo el recordatorio';
+
+ALTER TABLE CLIENT_EVENT_REMINDERS
+    ADD CONSTRAINT CLIENT_EVENT_REMINDER_PK PRIMARY KEY ( CLIENT_id, EVENT_id );
 
 -- ==========================================================================
 -- 6. INTEGRIDAD REFERENCIAL
@@ -647,4 +694,14 @@ ALTER TABLE VISIT_PROFILES
     ADD CONSTRAINT VISIT_PROFILE_CLIENT_FK FOREIGN KEY ( CLIENT_id )
     REFERENCES CLIENTS ( id );
 
-PROMPT DDL de Rumbea creado.
+-- [E3-R] CLIENT_EVENT_REMINDERS (CLIENT_id) debe existir en CLIENTS (id)
+ALTER TABLE CLIENT_EVENT_REMINDERS
+    ADD CONSTRAINT REMINDER_CLIENT_FK FOREIGN KEY ( CLIENT_id )
+    REFERENCES CLIENTS ( id );
+
+-- [E3-R] CLIENT_EVENT_REMINDERS (EVENT_id) debe existir en EVENTS (id)
+ALTER TABLE CLIENT_EVENT_REMINDERS
+    ADD CONSTRAINT REMINDER_EVENT_FK FOREIGN KEY ( EVENT_id )
+    REFERENCES EVENTS ( id );
+
+PROMPT DDL de Rumbea creado (19 tablas).

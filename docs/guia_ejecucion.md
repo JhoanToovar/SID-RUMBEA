@@ -6,6 +6,8 @@
 
 Se usa Oracle 11g XE local en Docker. Es la versión para la que Data Modeler exportó el DDL y no requiere el servidor de la universidad. La última ejecución está en [la evidencia](./evidencias/ejecucion_oracle11g.txt).
 
+> **Pendiente:** la evidencia actual es anterior a las correcciones `[E3-R]` (24 pruebas, 18 tablas). Hay que volver a correr `ejecutar_todo.sql` y reemplazar el archivo con la nueva salida.
+
 **Crear la base (una sola vez por computador)**, con Docker Desktop abierto, en una sola línea y eligiendo las dos contraseñas:
 
 ```text
@@ -35,10 +37,10 @@ Los scripts sirven también en otro Oracle 11g R2 o superior con permisos para c
 
 | Paso | Script | Resultado esperado |
 | --- | --- | --- |
-| 1 | `DDL/rumbea_ddl.sql` | 18 tablas |
-| 2 | `DML/rumbea_dml.sql` | 1080 filas |
+| 1 | `DDL/rumbea_ddl.sql` | 19 tablas |
+| 2 | `DML/rumbea_dml.sql` | 1243 filas |
 | 3 | `PL-SQL/rumbea_plsql.sql` | Función, procedimiento y trigger sin errores |
-| 4 | `PL-SQL/rumbea_pruebas.sql` | `RESULTADO: 24 correctas, 0 fallidas` |
+| 4 | `PL-SQL/rumbea_pruebas.sql` | `RESULTADO: 30 correctas, 0 fallidas` |
 | 5 | `DQL/rumbea_dql.sql` | 7 consultas con 14, 15, 12, 14, 10, 14 y 10 filas |
 
 Al final debe aparecer `FIN: ejecucion completa.`

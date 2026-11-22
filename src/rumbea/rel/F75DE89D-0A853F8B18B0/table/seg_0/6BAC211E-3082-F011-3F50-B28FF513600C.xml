@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6BAC211E-3082-F011-3F50-B28FF513600C" name="VISIT_PROFILES">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>97E878C4-6556-9061-3D37-149DD881F9BF</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="visitDate" id="D64BE50F-B3A2-11FF-B2E8-DF7879B36038">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>35D3BEEE-94E8-4A8C-EB32-4049F1F1A25B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>051C59B0-DF21-9DEC-1480-7EC14028A611</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="visitTimeIn" id="8ED5919C-3A9E-31E8-6D3B-236C837439C8">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>2FEE6426-F7D8-7D2A-5046-3C246B7683DA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>99100531-161B-EBD1-E669-AB83A228E030</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENT_id" id="FF4E33AC-FC2B-1CF7-7D40-4963BC207B8C">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>B9C4656F-180C-20DD-FB13-F0F419566191</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2131468E-C3C2-52FA-5606-68F46EFE6E5C" referredColumn="140934E5-9D64-7E08-9BAF-2140DF640CC9"/>
+</associations>
+</Column>
+<Column name="BRANCH_id" id="E70E8D73-CD81-1A2C-CC4D-F01225042860">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>554A3177-C30E-791E-5851-476F46D2EB8E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C909C42-48BA-81E0-27F3-B95E3878E672" referredColumn="28076CA7-4AE3-9EEB-6999-4454AFC2CAAC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6964D8EB-8336-6996-4652-19ACEBDA371B" name="VISIT_PROFILE_PK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>959536E1-FD42-D630-D254-082D2BD17ECB</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FF4E33AC-FC2B-1CF7-7D40-4963BC207B8C"/>
+<colUsage columnID="E70E8D73-CD81-1A2C-CC4D-F01225042860"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="96EFB91D-2921-2464-E7AC-149A98102975" name="VISIT_PROFILE_BRANCH_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E70E8D73-CD81-1A2C-CC4D-F01225042860"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CC625309-9470-CE79-5597-558F27B92D3B" name="VISIT_PROFILE_CLIENT_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FF4E33AC-FC2B-1CF7-7D40-4963BC207B8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

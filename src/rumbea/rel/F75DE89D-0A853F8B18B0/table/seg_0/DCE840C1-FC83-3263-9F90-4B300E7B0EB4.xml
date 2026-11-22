@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DCE840C1-FC83-3263-9F90-4B300E7B0EB4" name="REVIEWS">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>D19E2EC0-BCC8-CA56-F5F6-4F8046930BB9</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="3A90705C-222C-E976-CC32-C5D0C7850754">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>679F503C-BD75-9AFB-EF4D-706109EFAE66</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>414DB231-3AE7-8BC3-1540-05ED564CEF49</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="text" id="AB5EFBBC-77AB-00BA-608A-2E24ED142995">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>B5D3DCF7-89C8-52A5-9EC8-E3D3A8EB7179</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>070ADE56-D01D-73A9-715D-C3AAED048BDE</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rating" id="C675458C-C87E-A56A-A5EB-B81BD3F85934">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>7EF381D9-7BDC-A51C-4C16-1E1AD1FD6A80</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>99B168AD-CE76-0ABD-AFB5-6C2BAB9FE9F3</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="A9D3D603-4A24-1D71-2653-61B2EE82962F">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<importedID>B64E48E4-150A-8EB4-7123-9E7CDEB3C6C6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>051C59B0-DF21-9DEC-1480-7EC14028A611</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BRANCH_id" id="1EEE6F06-4A96-EA54-EDC3-D93F372B0BFE">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>CC0D033A-82C3-F02C-80A7-E75F49C64EB9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DF9760D0-F41E-BBB6-B748-44AE1C10F3B8" referredColumn="28076CA7-4AE3-9EEB-6999-4454AFC2CAAC"/>
+</associations>
+</Column>
+<Column name="CLIENT_id" id="4F3111FC-D525-0E29-4A50-647C5581C83C">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>31E85675-4D6F-F72B-D41F-30B40940574C</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E55664D2-F889-1B97-00E4-F2E5707B7A45" referredColumn="140934E5-9D64-7E08-9BAF-2140DF640CC9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6B522C43-EFD5-916B-E41B-1CA289B4AE9B" name="REVIEW_PK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>0F294B02-288A-9324-3E6A-7233C61D099C</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3A90705C-222C-E976-CC32-C5D0C7850754"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="81C86B7E-8D82-AB7E-46B4-8C2742BA7EF2" name="REVIEW_BRANCH_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1EEE6F06-4A96-EA54-EDC3-D93F372B0BFE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="60425DC2-AAD8-839D-B442-AE335FC48F4F" name="REVIEW_CLIENT_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4F3111FC-D525-0E29-4A50-647C5581C83C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="REVIEWS_RATING_CK" directorySegmentName="seg_0" id="D33A71DF-A36B-EA58-10C2-8EB0E9B375DA">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:19:15 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<rule><![CDATA[rating BETWEEN 1 AND 5]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

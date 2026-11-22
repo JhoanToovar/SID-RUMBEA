@@ -119,6 +119,26 @@ BEGIN
   espera_error('segundo horario el mismo dia', -1,
     q'[INSERT INTO BRANCH_SCHEDULES (id, dayOfWeek, openTime, closeTime, BRANCH_id) VALUES ('TEST', 'JUEVES', '18:00', '23:00', 'SED01')]');
 
+  DBMS_OUTPUT.PUT_LINE('--- Correcciones [E3-R] ---');
+  espera_error('estado de admin distinto de ACTIVO/INACTIVO', -2290,
+    q'[UPDATE ADMINS SET stateActive = 'SI' WHERE id = 'ADM01']');
+  espera_error('hora de acceso invalida', -2290,
+    q'[INSERT INTO VISIT_PROFILES (id, visitDate, visitTimeIn, interactionSeconds, CLIENT_id, BRANCH_id) VALUES ('TEST', SYSDATE, 2475, 30, 'CLI001', 'SED01')]');
+  espera_error('tiempo de interaccion en cero', -2290,
+    q'[INSERT INTO VISIT_PROFILES (id, visitDate, visitTimeIn, interactionSeconds, CLIENT_id, BRANCH_id) VALUES ('TEST', SYSDATE, 2100, 0, 'CLI001', 'SED01')]');
+  espera_error('recordatorio repetido del mismo evento', -1,
+    q'[INSERT INTO CLIENT_EVENT_REMINDERS (CLIENT_id, EVENT_id, reminderDate) VALUES ('CLI001', 'EVT01', SYSDATE)]');
+  espera_error('recordatorio de evento inexistente', -2291,
+    q'[INSERT INTO CLIENT_EVENT_REMINDERS (CLIENT_id, EVENT_id, reminderDate) VALUES ('CLI001', 'NOEXISTE', SYSDATE)]');
+
+  INSERT INTO VISIT_PROFILES (id, visitDate, visitTimeIn, interactionSeconds, CLIENT_id, BRANCH_id)
+  VALUES ('TEST1', SYSDATE, 2100, 45, 'CLI001', 'SED01');
+  INSERT INTO VISIT_PROFILES (id, visitDate, visitTimeIn, interactionSeconds, CLIENT_id, BRANCH_id)
+  VALUES ('TEST2', SYSDATE, 2130, 60, 'CLI001', 'SED01');
+  SELECT COUNT(*) INTO v_esperado FROM VISIT_PROFILES
+  WHERE CLIENT_id = 'CLI001' AND BRANCH_id = 'SED01' AND id IN ('TEST1', 'TEST2');
+  verificar('un cliente puede visitar varias veces la misma sede', v_esperado = 2);
+
   ROLLBACK TO inicio_pruebas;
   DBMS_OUTPUT.PUT_LINE('RESULTADO: ' || v_ok || ' correctas, ' || v_fallas || ' fallidas');
 

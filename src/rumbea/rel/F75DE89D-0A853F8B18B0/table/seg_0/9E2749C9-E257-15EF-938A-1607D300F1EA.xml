@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9E2749C9-E257-15EF-938A-1607D300F1EA" name="CLIENTS">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>DA55B324-DE57-4B6E-F5C0-54E464EC88B7</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="140934E5-9D64-7E08-9BAF-2140DF640CC9">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>43673CEA-1F21-88F1-A4EE-93C219F5E149</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6E02B74A-8BF9-24B5-DCC1-718F781D2D52" referredColumn="616B656F-91C2-7866-9F54-39E2575D304D"/>
+</associations>
+</Column>
+<Column name="role" id="A62AA205-C68B-1986-4467-34D4D399B8EF">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>B6F35E0C-9398-4881-0829-FCE9202D7376</importedID>
+<constraintName>CLIENTS_CK_1</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>15CC8D53-F1DA-BBBE-087C-AC1EBB704B79</domain>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 21c" definition="role = &apos;CLIENT&apos;"/>
+</checkConstraint>
+<defaultValue>&apos;CLIENT&apos;</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6E02B74A-8BF9-24B5-DCC1-718F781D2D52" referredColumn="239BC3A2-85D4-0926-B188-E8B44679D4A2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6E5C1EDE-B163-FCF9-4AD3-8CDEF6E51C74" name="CLIENT_PK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<importedID>4B400D1D-6834-4B63-58B5-48B771C64BC2</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="140934E5-9D64-7E08-9BAF-2140DF640CC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CF76B371-94FC-04D3-4805-DF9DAC231A03" name="CLIENT_USER_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="140934E5-9D64-7E08-9BAF-2140DF640CC9"/>
+<colUsage columnID="A62AA205-C68B-1986-4467-34D4D399B8EF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
