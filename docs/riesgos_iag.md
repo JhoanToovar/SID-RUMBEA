@@ -4,7 +4,7 @@
 
 ## 1. Alcance
 
-La Entrega 3 permite el uso completo de IAg (nivel 4), con uso crítico y justificado. En esta entrega se usó Claude Code para revisar el DDL exportado de Data Modeler y generar los scripts y su documentación.
+La Entrega 3 permite el uso completo de IAg (nivel 4), con uso crítico y justificado. En esta entrega se consultó a Claude como apoyo de revisión: para contrastar el alcance, resolver dudas puntuales de Oracle 11g y revisar decisiones sobre el DDL exportado de Data Modeler. Los scripts y la documentación los redactó el equipo.
 
 Este documento analiza qué puede salir mal al hacer lo mismo en una empresa. Cuando aplica, usa como evidencia lo ocurrido en este proyecto.
 
@@ -32,7 +32,7 @@ Una consulta puede ejecutar sin error y dar un número falso. Si en Q7 se uniera
 **Control:** agregar antes de unir y comprobar contra casos calculados a mano.
 
 ### 2. Requisitos inventados o reinterpretados
-El R2 pedía contar "recordar evento" y el MR no guarda ese dato. La IA propuso crear una tabla y el equipo decidió no cambiar el modelo. Habría sido fácil renombrar un conteo de favoritos como "recordatorios" y entregar un reporte falso.
+El R2 pedía contar "recordar evento" y el MR no guarda ese dato. Al consultarle, la IA propuso crear una tabla y el equipo decidió no cambiar el modelo. Habría sido fácil renombrar un conteo de favoritos como "recordatorios" y entregar un reporte falso.
 **Control:** Q4 se llama *audiencia potencial* y la diferencia está documentada.
 
 ### 3. Afirmaciones incorrectas dichas con seguridad
@@ -40,7 +40,7 @@ Al leer solo el PDF del MR, la IA señaló un posible error en el tipo de `role`
 **Control:** validar contra el artefacto fuente antes de corregir.
 
 ### 4. Falsa sensación de "ya está probado"
-La IA validó la sintaxis con el parser de SQL Developer y los datos con una réplica en SQLite. Eso no compila PL/SQL ni reproduce Oracle: por ejemplo, SQLite y Oracle concatenan `NULL` de forma distinta.
+El equipo validó la sintaxis con el parser de SQL Developer y los datos con una réplica en SQLite, y la IA advirtió que eso no compila PL/SQL ni reproduce Oracle: por ejemplo, SQLite y Oracle concatenan `NULL` de forma distinta.
 **Control:** no se dieron por probados los scripts hasta ejecutar `ejecutar_todo.sql` en un Oracle 11g real ([evidencia](./evidencias/ejecucion_oracle11g.txt)).
 
 ### 5. Operaciones destructivas
@@ -48,11 +48,11 @@ Un `DROP` generado para "empezar limpio" puede borrar el trabajo de otros. Un es
 **Control:** la limpieza es manual, verifica una marca en cada tabla y no usa `CASCADE CONSTRAINTS`.
 
 ### 6. Fuga de datos y credenciales
-Lo que se pega o lo que el agente lee se envía a un proveedor externo. Un agente con acceso al disco también puede leer fuera del repositorio: aquí consultó la carpeta de entregas anteriores para recuperar documentos. En una empresa, esto puede incumplir la Ley 1581 de 2012 de protección de datos y los contratos con clientes.
+Lo que se pega o lo que una herramienta lee se envía a un proveedor externo. Una herramienta con acceso al disco también puede leer fuera del repositorio; por eso aquí se limitó su uso a consultas puntuales y no se le dio acceso autónomo a carpetas con información sensible. En una empresa, esto puede incumplir la Ley 1581 de 2012 de protección de datos y los contratos con clientes.
 **Control:** datos ficticios, credenciales fuera del chat y carpetas de acceso limitadas.
 
 ### 7. Vulnerabilidades en el código
-La IA puede producir SQL dinámico inyectable, permisos excesivos o contraseñas en texto plano.
+La IA puede sugerir SQL dinámico inyectable, permisos excesivos o contraseñas en texto plano.
 **Control:** procedimiento con parámetros tipados y SQL estático, y autorización en el trigger. En producción faltaría guardar hashes y autenticar al usuario, porque el procedimiento confía en el id que recibe.
 
 ### 8. Instrucciones ocultas en documentos
@@ -72,7 +72,7 @@ Se puede entregar código que nadie sabe defender ni mantener.
 **Control:** cada integrante debe poder explicar el arco, las FK compuestas, el trigger y cada consulta.
 
 ### 12. Autoría, licencias y responsabilidad
-El código generado puede parecerse a código con licencia y el proveedor no responde por sus errores.
+El código sugerido o revisado con IA puede parecerse a código con licencia y el proveedor no responde por sus errores.
 **Control:** seguir la política de la organización y registrar el uso en la [bitácora de prompts](./bitacora_prompts.md). Responde quien aprueba y entrega.
 
 ## 4. Decisión técnica que hubo que validar
@@ -87,4 +87,4 @@ La IA puede mostrar alternativas y costos, pero el alcance lo decide quien respo
 
 ## 5. Conclusión
 
-La IAg acelera la escritura de SQL, pero traslada el esfuerzo a especificar y verificar. En un contexto profesional debe usarse con mínimo privilegio, datos no sensibles, pruebas en el motor real y una persona responsable que entienda cada cambio.
+La IAg ayuda a revisar, contrastar y resolver dudas, pero no reemplaza el criterio ni la escritura del equipo. En un contexto profesional debe usarse con mínimo privilegio, datos no sensibles, pruebas en el motor real y una persona responsable que entienda cada cambio.
