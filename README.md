@@ -14,7 +14,7 @@ Proyecto académico desarrollado para la asignatura **Sistemas Intensivos en Dat
 | --- | --- | --- |
 | Jhoan Manuel Tovar Rendon | A00408185 | [JhoanToovar](https://github.com/JhoanToovar) |
 | Juan Pablo Martinez Rosero | A00407215 | [ArkJuanpa](https://github.com/ArkJuanpa) |
-| Miguel Pérez | *Pendiente* | [miguelperezdev](https://github.com/miguelperezdev) |
+| Miguel Pérez | A00407054 | [miguelperezdev](https://github.com/miguelperezdev) |
 
 ---
 
@@ -138,7 +138,7 @@ Análisis de riesgos del uso de IA generativa en un contexto profesional.
 
 ## Bitácora de prompts
 
-Registro de los prompts utilizados durante el desarrollo del proyecto y de las interacciones realizadas con herramientas de Inteligencia Artificial Generativa.
+Registro de las consultas puntuales realizadas a herramientas de Inteligencia Artificial Generativa como apoyo de ideas, revisión y resolución de dudas. La autoría de los artefactos es del equipo.
 
 [Consultar bitácora de prompts](./docs/bitacora_prompts.md)
 
@@ -362,7 +362,7 @@ git push origin main
 | Requerimientos          | Completado / En actualización |
 | Acuerdos de trabajo     | Completado                    |
 | Modelo Entidad-Relación | Completado                    |
-| Modelo Relacional       | Completado                  |
+| Modelo Relacional       | Completado                    |
 | Normalización 3FN       | Completado                  |
 | DDL                     | Probado en Oracle 11g XE               |
 | DML                     | Probado en Oracle 11g XE               |
