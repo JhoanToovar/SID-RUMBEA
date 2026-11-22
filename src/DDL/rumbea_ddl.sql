@@ -2,8 +2,9 @@
 -- RUMBEA - Entrega 3 - Script DDL
 -- Motor: Oracle 11g Release 2 o superior
 --
--- Origen: DDLProyecto.ddl, exportado de Data Modeler 24.3.1. Este script es la
---   version oficial: si el .ddl y este archivo difieren, manda este. Agrega:
+-- Origen: DDLProyecto.ddl, exportado de Data Modeler 24.3.1 y ajustado a mano
+--   en la revision final; ambos tienen las mismas tablas, columnas y
+--   restricciones. Este script es el que se ejecuta. Agrega:
 --     * orden por modulo y documentacion de tablas, columnas y reglas
 --     * 8 restricciones de negocio, marcadas con [E3]
 --     * correcciones posteriores a la revision, marcadas con [E3-R]:

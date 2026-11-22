@@ -601,6 +601,7 @@ En este caso la IA **sí generó** cambios en código y documentación, marcados
 * DDL: PK propia y `interactionSeconds` en `VISIT_PROFILES`, tabla `CLIENT_EVENT_REMINDERS` y CHECK de `stateActive` y de la hora de acceso.
 * DML: ids y tiempos de las visitas, visitas repetidas y 117 recordatorios.
 * DQL: Q1 y Q4 reescritas. Pruebas: 6 casos nuevos.
+* `DDLProyecto.ddl`: ajustado a mano con los mismos cambios, para que coincida con `rumbea_ddl.sql` (19 tablas, mismas columnas y restricciones).
 * Documentos nuevos: `normalizacion_entrega3.md` y `caso_estudio_ajustes_entrega3.md`. Actualizaciones en README, reportes, guía, riesgos y esta bitácora.
 
 ## 5. Modificaciones realizadas por el equipo

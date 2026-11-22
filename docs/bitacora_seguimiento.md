@@ -248,7 +248,8 @@ En la revisión final se revirtieron dos decisiones de esta sesión (ver Prompt 
 * Se agregó la tabla `CLIENT_EVENT_REMINDERS`: Q4 cuenta recordatorios reales.
 * `VISIT_PROFILES` tiene PK propia y tiempo de interacción: Q1 muestra el historial completo.
 * Se agregaron el CHECK de `stateActive`, la normalización actualizada (`docs/normalizacion_entrega3.md`) y los ajustes al caso (HU21 a HU23).
-* **Pendiente del equipo:** llevar los cambios a Data Modeler, volver a exportar el MER, el MR y `DDLProyecto.ddl`, y regenerar la evidencia en Oracle.
+* `DDLProyecto.ddl` se ajustó a mano para que coincida con `rumbea_ddl.sql`.
+* **Pendiente del equipo:** llevar los cambios a Data Modeler, volver a exportar el MER y el MR (y comparar el `.ddl` exportado), y regenerar la evidencia en Oracle.
 
 ---
 
