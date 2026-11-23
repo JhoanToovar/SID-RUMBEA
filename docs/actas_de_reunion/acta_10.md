@@ -84,3 +84,7 @@ Se cerró la Entrega 3 y el repositorio quedó completo, con los scripts probado
 ## 8. Próxima reunión
 
 No se programan más reuniones de trabajo. La siguiente cita es la sustentación, en la semana 17, en la fecha que asigne el profesor. Antes de esa fecha cada uno repasa su parte y nos escribimos por WhatsApp para cualquier duda.
+
+## Nota posterior a la reunión
+
+Las 18 tablas, las 24 pruebas, la audiencia potencial de Q4 y el historial parcial de accesos corresponden a la versión revisada durante la reunión. La revisión final incorporó 19 tablas y registró 30 pruebas correctas. Q4 pasó a contar los recordatorios registrados en `CLIENT_EVENT_REMINDERS`. `VISIT_PROFILES` recibió una clave primaria propia (`id`), lo que permite registrar varias visitas del mismo cliente a la misma sede. Los cambios se detallan en [Reportes y decisiones](../reportes_y_decisiones.md#3-correcciones-al-modelo-después-de-la-revisión) y los resultados constan en la [evidencia de ejecución](../evidencias/ejecucion_oracle11g.txt).

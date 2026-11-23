@@ -62,8 +62,6 @@ SID-RUMBEA/
 │
 ├── docs/
 │   ├── CasoDeEstudio.pdf                  (incluye HU21-HU23 y reportes)
-│   ├── enunciado/
-│   │   └── enunciado_entrega3.txt
 │   ├── normalizacion_entrega3.md
 │   ├── reportes_y_decisiones.md
 │   ├── guia_ejecucion.md
@@ -85,7 +83,7 @@ SID-RUMBEA/
 │   └── relacional/
 │       ├── MRentrega3rumbea.pdf             (MR vigente)
 │       ├── DFNormYRelaciones_entrega3.pdf   (normalizacion vigente)
-│       ├── MRentrega2rumbeaCorregido.pdf    (MR de la Entrega 2, historico)
+│       ├── MRentrega2.pdf                  (MR de la Entrega 2, historico)
 │       └── DFNormYRelaciones.pdf            (normalizacion de la Entrega 2, historico)
 │
 └── src/
@@ -116,10 +114,6 @@ La documentación del proyecto se encuentra en la carpeta [`docs`](./docs).
 Documento que describe la situación problema seleccionada, su contexto, objetivo y alcance.
 
 [Consultar caso de estudio](./docs/CasoDeEstudio.pdf) (incluye los ajustes de la Entrega 3: HU21 a HU23 y los reportes)
-
-## Enunciado
-
-[Enunciado de la Entrega 3](./docs/enunciado/enunciado_entrega3.txt)
 
 ## Reportes y decisiones de implementación
 
