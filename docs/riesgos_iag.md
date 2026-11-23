@@ -4,7 +4,7 @@
 
 ## 1. Alcance
 
-La Entrega 3 permite el uso completo de IAg (nivel 4), con uso crítico y justificado. En esta entrega se consultó a Claude como apoyo de revisión: para contrastar el alcance, resolver dudas puntuales de Oracle 11g y revisar decisiones sobre el DDL exportado de Data Modeler. Los scripts y la documentación los redactó el equipo.
+La Entrega 3 permite el uso completo de IAg (nivel 4), con uso crítico y justificado. En esta entrega se consultó a Claude como apoyo de revisión: para contrastar el alcance, resolver dudas puntuales de Oracle 11g y revisar decisiones sobre el DDL exportado de Data Modeler. Los scripts y la documentación los redactó el equipo, salvo las correcciones de la revisión final, marcadas con `[E3-R]` y declaradas en el Prompt No. 11 de la [bitácora](./bitacora_prompts.md).
 
 Este documento analiza qué puede salir mal al hacer lo mismo en una empresa. Cuando aplica, usa como evidencia lo ocurrido en este proyecto.
 
@@ -32,8 +32,8 @@ Una consulta puede ejecutar sin error y dar un número falso. Si en Q7 se uniera
 **Control:** agregar antes de unir y comprobar contra casos calculados a mano.
 
 ### 2. Requisitos inventados o reinterpretados
-El R2 pedía contar "recordar evento" y el MR no guarda ese dato. Al consultarle, la IA propuso crear una tabla y el equipo decidió no cambiar el modelo. Habría sido fácil renombrar un conteo de favoritos como "recordatorios" y entregar un reporte falso.
-**Control:** Q4 se llama *audiencia potencial* y la diferencia está documentada.
+El R2 pedía contar "recordar evento" y el MR no guardaba ese dato. Habría sido fácil renombrar un conteo de favoritos como "recordatorios" y entregar un reporte falso. En la primera versión Q4 se llamó *audiencia potencial* para no confundirlos; en la revisión final se agregó la tabla `CLIENT_EVENT_REMINDERS` y Q4 cuenta recordatorios reales.
+**Control:** nombrar cada métrica por lo que realmente mide y trazar cada reporte hasta el dato que lo soporta.
 
 ### 3. Afirmaciones incorrectas dichas con seguridad
 Al leer solo el PDF del MR, la IA señaló un posible error en el tipo de `role` y varios nombres demasiado largos para versiones antiguas de Oracle. El DDL mostró que ninguno de los dos problemas existía.
@@ -80,10 +80,10 @@ El código sugerido o revisado con IA puede parecerse a código con licencia y e
 **Pregunta:** ¿cambiar el MR para soportar por completo R1 y R2, o mantenerlo?
 
 - **Propuesta de la IA:** una tabla de recordatorios y una PK propia para las visitas.
-- **Decisión del equipo:** no tocar el modelo.
-- **Consecuencia:** R1 y R2 tienen un alcance menor, declarado en [reportes y decisiones](./reportes_y_decisiones.md).
+- **Primera decisión del equipo:** no tocar el modelo, con R1 y R2 de alcance menor.
+- **Revisión final:** al contrastar con la retroalimentación del profesor (pedía registrar cada visita y su tiempo de interacción) y con la corrección ya hecha en `REVIEWS`, el argumento para no cambiar el modelo no se sostenía. Se aplicaron los cambios `[E3-R]` y R1 y R2 quedaron completos ([reportes y decisiones](./reportes_y_decisiones.md)).
 
-La IA puede mostrar alternativas y costos, pero el alcance lo decide quien responde por el proyecto.
+La IA puede mostrar alternativas y costos, pero el alcance lo decide quien responde por el proyecto. Este caso también muestra el riesgo contrario: una decisión tomada para "no complicarse" puede contradecir la retroalimentación del cliente, y hay que revisarla contra la fuente.
 
 ## 5. Conclusión
 

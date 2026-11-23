@@ -8,7 +8,7 @@ El uso de IA fue siempre consultivo y estuvo limitado a cuatro funciones: **apor
 
 En las **Entregas 0 a 2** (nivel 2) el proyecto se desarrolló de forma manual: caso de estudio, historias de usuario, modelo entidad-relación (MER), modelo relacional (MR) y organización del repositorio fueron elaboración propia en Oracle Data Modeler y GitHub. La IA se consultó solo para revisar redacción, aclarar conceptos pequeños y recordar sintaxis de Markdown.
 
-En la **Entrega 3** (nivel 4, IAG completa) el equipo mantuvo el mismo criterio. La IA se usó para contrastar el alcance, revisar decisiones y resolver dudas técnicas, como se registra en los Prompts No. 05 a 10. Los scripts y la documentación los escribió el equipo.
+En la **Entrega 3** (nivel 4, IAG completa) el equipo mantuvo el mismo criterio. La IA se usó para contrastar el alcance, revisar decisiones y resolver dudas técnicas, como se registra en los Prompts No. 05 a 10. Los scripts y la documentación los escribió el equipo. En la revisión final (Prompt No. 11) la IA sí redactó las correcciones marcadas con `[E3-R]`.
 
 ---
 
@@ -556,9 +556,71 @@ Documento de riesgos, guía de ejecución y evidencia listos, con autoría del e
 
 ---
 
+# Prompt No. 11
+
+## Información general
+
+| Campo                  | Información                                              |
+| ---------------------- | -------------------------------------------------------- |
+| **Fecha**              | 22/11/2026                                               |
+| **Herramienta**        | Claude                                                   |
+| **Etapa del proyecto** | Entrega 3 (revisión final)                               |
+| **Componente**         | Revisión integral y correcciones `[E3-R]`                |
+| **Responsable**        | Por completar (integrante que hizo la consulta)          |
+
+## 1. Objetivo del prompt
+
+Revisar el repositorio completo antes de la entrega: verificar que las correcciones del profesor estuvieran aplicadas, revisar la normalización y corregir lo que faltara.
+
+## 2. Prompt utilizado
+
+```text
+Mira todo este zip, es la 3ra entrega y se supone que las correcciones ya están hechas. Revísalo bien y dime qué falta.
+```
+
+```text
+¿Estás seguro de que la normalización está bien?
+```
+
+```text
+Dame todas las correcciones en un zip. Corrige todo y dime qué no se pudo o qué hace falta.
+```
+
+## 3. Resultado obtenido
+
+* Confirmó que las 7 anotaciones del profesor sobre el MR estaban resueltas en el DDL.
+* Señaló que `VISIT_PROFILES` seguía permitiendo una sola visita por cliente y sede, y no guardaba el tiempo de interacción pedido en la retroalimentación del MER.
+* Señaló que "recordar evento" (R2) no estaba implementado.
+* Señaló que `DFNormYRelaciones.pdf` era de la Entrega 2, que varias DF ya no correspondían al modelo y que `BRANCH_EVENTS` no cumple 2FN.
+* Señaló que el trabajo estaba solo en `develop`, que había archivos sin commit y que el README estaba desactualizado.
+
+## 4. Uso de la respuesta
+
+En este caso la IA **sí generó** cambios en código y documentación, marcados con `[E3-R]`:
+
+* DDL: PK propia y `interactionSeconds` en `VISIT_PROFILES`, tabla `CLIENT_EVENT_REMINDERS` y CHECK de `stateActive` y de la hora de acceso.
+* DML: ids y tiempos de las visitas, visitas repetidas y 117 recordatorios.
+* DQL: Q1 y Q4 reescritas. Pruebas: 6 casos nuevos.
+* `DDLProyecto.ddl`: ajustado a mano con los mismos cambios, para que coincida con `rumbea_ddl.sql` (19 tablas, mismas columnas y restricciones).
+* Documentos nuevos: `normalizacion_entrega3.md` y `caso_estudio_ajustes_entrega3.md`. Actualizaciones en README, reportes, guía, riesgos y esta bitácora.
+
+## 5. Modificaciones realizadas por el equipo
+
+Por completar: el equipo debe revisar cada cambio `[E3-R]`, correrlo en Oracle y ajustarlo si no está de acuerdo.
+
+## 6. Validación
+
+La IA validó los datos y las consultas en una réplica en SQLite (19 tablas, 1243 filas, 7 reportes con 10 o más filas, restricciones nuevas). **No pudo ejecutar Oracle.** La validación oficial es correr `ejecutar_todo.sql` en Oracle 11g XE y reemplazar la evidencia.
+
+## 7. Resultado final
+
+R1 y R2 completos, normalización actualizada y documentada, con revisión del equipo pendiente.
+
+---
+
 # Consideraciones generales sobre el uso de IA
 
-En la Entrega 3 la IA se usó como apoyo de consulta y revisión: aportó ideas, ayudó a precisar el alcance, resolvió dudas puntuales y revisó fragmentos ya escritos por el equipo. No redactó los artefactos ni tomó decisiones de diseño.
+En la Entrega 3 la IA se usó como apoyo de consulta y revisión: aportó ideas, ayudó a precisar el alcance, resolvió dudas puntuales y revisó fragmentos ya escritos por el equipo. La excepción es la revisión final (Prompt No. 11): ahí la IA sí redactó las correcciones marcadas con `[E3-R]`, que el equipo revisa y asume. El enunciado de la Entrega 3 permite el uso completo de IAg (nivel 4) siempre que sea crítico y declarado.
 
 En todas las entregas la inteligencia artificial tuvo un papel marginal y consultivo. Todo el trabajo central fue humano:
 
@@ -567,6 +629,6 @@ En todas las entregas la inteligencia artificial tuvo un papel marginal y consul
 * El DDL, el DML, el DQL, el PL/SQL y los datos de prueba los escribió y probó el equipo.
 * La organización del repositorio, los commits, el README y las actas los hicimos manualmente.
 
-Cada respuesta de IA fue revisada y, en la mayoría de los casos, descartada casi por completo. Solo se aprovecharon correcciones de ortografía, explicaciones conceptuales cortas, sintaxis de Markdown y observaciones puntuales de revisión. Ningún diagrama, script o documento fue generado por IA.
+Cada respuesta de IA fue revisada y, en la mayoría de los casos, descartada casi por completo. Hasta el Prompt No. 10 solo se aprovecharon correcciones de ortografía, explicaciones conceptuales cortas, sintaxis de Markdown y observaciones puntuales de revisión. Las únicas partes generadas por IA son las correcciones `[E3-R]` del Prompt No. 11, identificadas en el código y en los documentos.
 
 El registro anterior permite evidenciar la trazabilidad y diferenciar entre las sugerencias puntuales de la IA y las decisiones finales tomadas por el equipo.

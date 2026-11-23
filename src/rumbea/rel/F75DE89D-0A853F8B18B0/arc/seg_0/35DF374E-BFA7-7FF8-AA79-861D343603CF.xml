@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKArc class="oracle.dbtools.crest.model.design.relational.FKArc" directorySegmentName="seg_0" id="35DF374E-BFA7-7FF8-AA79-861D343603CF" name="BRANCH_UPDATES_CK_1">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:07:44 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>0F1BD769-04BE-A3EB-6109-48D75F4A8036</importedID>
+<mandatory>true</mandatory>
+<table>C8B184FC-610F-DA2F-3F0C-8760E1C01E58</table>
+<fkeys>
+<fkeyID>EF3661B2-9894-2CB7-FEB2-FDABF30F6E3B</fkeyID>
+<fkeyID>AF2E9563-9F25-D1A0-808D-25F24249E0E8</fkeyID>
+</fkeys>
+</FKArc>

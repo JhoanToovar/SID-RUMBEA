@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8BE8BB43-ECDE-A1FF-CF1C-5F376968D1AD" name="CLIENT MUSIC PREFERENCES">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:23:30 UTC</createdTime>
+<generatorID>41B3434D-E8AE-9CFA-22AB-737712059CE4</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="F75DE89D-5D55-020C-8740-0A853F8B18B0" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MUSIC GENRE id" id="8F161574-E2AE-186D-FD97-D39EDED672BF">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:23:30 UTC</createdTime>
+<generatorID>8F28B1B1-61EA-B8F3-6E93-9603AAB271BE</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="F75DE89D-5D55-020C-8740-0A853F8B18B0" value="true"/>
+</engineerTo>
+<referedAttribute>D8A7A6BA-014E-837F-1BFF-816A068E3908</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>414DB231-3AE7-8BC3-1540-05ED564CEF49</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="797013C7-2D6B-86AB-4CF1-5B0916BD61B3" name="CLIENT MUSIC PREFERENCE PK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:23:30 UTC</createdTime>
+<generatorID>A187BCC5-0BD3-B910-C903-A72ABE308AEF</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="F75DE89D-5D55-020C-8740-0A853F8B18B0" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8F161574-E2AE-186D-FD97-D39EDED672BF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -12,6 +12,7 @@
 --   Q7      R3        si      si     si        si       10
 --
 -- Los filtros estan en el bloque "parametros" al inicio de cada consulta.
+-- [E3-R] Q1 usa visitas con PK propia y Q4 cuenta recordatorios reales.
 -- ==========================================================================
 SET DEFINE OFF
 SET SQLBLANKLINES ON
@@ -37,18 +38,20 @@ PROMPT
 PROMPT === Q1 - R1: accesos diarios al perfil de la sede del administrador ===
 -- Q1. En lenguaje natural:
 --   Para la sede que tiene asignada el administrador ADM01, mostrar por cada
---   dia cuantos accesos tuvo su perfil y a que hora fueron el primero y el
---   ultimo, del dia mas reciente al mas antiguo.
+--   dia cuantos accesos tuvo su perfil, cuantos clientes distintos lo vieron,
+--   cuanto duro en promedio cada visita y a que hora fueron el primero y el
+--   ultimo acceso, del dia mas reciente al mas antiguo.
 -- Tecnica:
 --   INNER JOIN para llegar del admin a su sede y sus accesos. GROUP BY por dia.
--- Limite del modelo:
---   hay un registro por pareja cliente y sede, asi que un cliente cuenta una
---   sola vez por sede en todo el historial.
+--   [E3-R] Con la PK propia de VISIT_PROFILES un cliente puede aparecer varias
+--   veces; por eso accesos y clientes_distintos pueden diferir.
 WITH parametros AS (
   SELECT 'ADM01' AS admin_id FROM dual
 )
 SELECT TO_CHAR(TRUNC(v.visitDate), 'YYYY-MM-DD') AS fecha,
        COUNT(*) AS accesos,
+       COUNT(DISTINCT v.CLIENT_id) AS clientes_distintos,
+       ROUND(AVG(v.interactionSeconds)) AS seg_promedio,
        SUBSTR(LPAD(MIN(v.visitTimeIn), 4, '0'), 1, 2) || ':' ||
        SUBSTR(LPAD(MIN(v.visitTimeIn), 4, '0'), 3, 2) AS primer_acceso,
        SUBSTR(LPAD(MAX(v.visitTimeIn), 4, '0'), 1, 2) || ':' ||
@@ -112,32 +115,37 @@ GROUP BY e.id, e.name
 ORDER BY favoritos DESC, establecimiento;
 
 PROMPT
-PROMPT === Q4 - R2: eventos del dueno por audiencia potencial ===
+PROMPT === Q4 - R2: eventos del dueno por recordatorios ===
 -- Q4. En lenguaje natural:
 --   Para cada evento de los establecimientos del dueno OWN01, mostrar en
---   cuantas sedes se realiza y cuantos clientes distintos tienen como favorita
---   alguna de ellas, de mayor a menor.
--- Ajuste frente al reporte inicial:
---   la Entrega 0 pedia contar "recordar evento" y el MR no guarda ese dato.
---   audiencia_potencial es una aproximacion por favoritos. NO equivale a la
---   cantidad de personas que activaron un recordatorio.
+--   cuantas sedes se realiza y cuantos clientes activaron "recordar evento",
+--   de mayor a menor, incluyendo los eventos sin recordatorios.
+-- [E3-R] Ahora cuenta recordatorios reales (CLIENT_EVENT_REMINDERS), como pedia
+--   el reporte de la Entrega 0. Antes era una aproximacion por favoritos.
 -- Tecnica:
---   COUNT(DISTINCT) evita contar dos veces a quien sigue dos sedes del evento.
+--   los recordatorios se agregan en la CTE "recordatorios" y luego se unen con
+--   LEFT OUTER JOIN; asi no se multiplican por el numero de sedes del evento y
+--   los eventos sin recordatorios aparecen con 0.
 WITH parametros AS (
   SELECT 'OWN01' AS owner_id FROM dual
+),
+recordatorios AS (
+  SELECT EVENT_id, COUNT(*) AS total
+  FROM CLIENT_EVENT_REMINDERS
+  GROUP BY EVENT_id
 )
 SELECT ev.name AS evento,
        e.name AS establecimiento,
        TO_CHAR(ev.realizationDate, 'YYYY-MM-DD HH24:MI') AS fecha,
        COUNT(DISTINCT be.BRANCH_id) AS sedes,
-       COUNT(DISTINCT f.CLIENT_id) AS audiencia_potencial
+       NVL(r.total, 0) AS recordatorios
 FROM parametros p
 INNER JOIN ESTABLISHMENTS e      ON e.ESTABLISHMENT_OWNER_id = p.owner_id
 INNER JOIN EVENTS ev             ON ev.ESTABLISHMENT_id = e.id
 LEFT OUTER JOIN BRANCH_EVENTS be ON be.EVENT_id = ev.id
-LEFT OUTER JOIN FAVORITES f      ON f.BRANCH_id = be.BRANCH_id
-GROUP BY ev.id, ev.name, e.name, ev.realizationDate
-ORDER BY audiencia_potencial DESC, ev.realizationDate, ev.id;
+LEFT OUTER JOIN recordatorios r  ON r.EVENT_id = ev.id
+GROUP BY ev.id, ev.name, e.name, ev.realizationDate, r.total
+ORDER BY recordatorios DESC, ev.realizationDate, ev.id;
 
 PROMPT
 PROMPT === Q5 - R2: TOP 10 sedes del dueno por favoritos ===

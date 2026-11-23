@@ -17,6 +17,7 @@ DECLARE
   TYPE t_nombres IS TABLE OF VARCHAR2(30);
   -- Hijas primero, padres al final
   v_tablas t_nombres := t_nombres(
+    'CLIENT_EVENT_REMINDERS',
     'BRANCH_EVENTS', 'BRANCH_MUSIC_GENRES', 'BRANCH_SCHEDULES',
     'BRANCH_TYPES', 'BRANCH_UPDATES', 'LINK_OF_INTERESTS',
     'CLIENT_MUSIC_PREFERENCES', 'FAVORITES', 'REVIEWS',

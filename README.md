@@ -61,7 +61,10 @@ SID-RUMBEA/
 │
 ├── docs/
 │   ├── CasoDeEstudio.pdf
+│   ├── caso_estudio_ajustes_entrega3.md   (HU21-HU23 y reportes)
 │   ├── enunciado/
+│   │   └── enunciado_entrega3.txt
+│   ├── normalizacion_entrega3.md
 │   ├── reportes_y_decisiones.md
 │   ├── guia_ejecucion.md
 │   ├── evidencias/
@@ -73,20 +76,25 @@ SID-RUMBEA/
 │
 ├── model/
 │   ├── conceptual/
-│   │   ├── MERentrega2rumbea.pdf
+│   │   ├── MERentrega3rumbea.pdf            (MER vigente)
+│   │   ├── MERentrega2rumbea.pdf            (historico)
 │   │   ├── correccionMerEntrega1.pdf
-│   │   ├── Equipo19_retroalimentacion.pdf
+│   │   ├── Equipo19_retroalimentacion.pdf   (retroalimentacion del MER)
 │   │   └── rumbea/
 │   │
 │   └── relacional/
-│       ├── MERentrega2rumbeaCorregido.pdf   (es el MR)
-│       ├── DFNormYRelaciones.pdf
+│       ├── MRentrega3rumbea.pdf             (MR vigente)
+│       ├── DFNormYRelaciones_entrega3.pdf   (normalizacion vigente)
+│       ├── Rumbea_correcciones_MR.pdf       (retroalimentacion del MR)
+│       ├── MERentrega2rumbeaCorregido.pdf   (MR de la Entrega 2, historico)
+│       ├── DFNormYRelaciones.pdf            (normalizacion de la Entrega 2, historico)
 │       └── rumbea/
 │
 └── src/
     ├── ejecutar_todo.sql
+    ├── rumbea.dmd + rumbea/                 (proyecto Data Modeler de la Entrega 3)
     ├── DDL/
-    │   ├── DDLProyecto.ddl                  (exportación original)
+    │   ├── DDLProyecto.ddl                  (exportacion original)
     │   ├── rumbea_ddl.sql
     │   └── rumbea_limpieza.sql
     ├── DML/
@@ -98,7 +106,6 @@ SID-RUMBEA/
         └── rumbea_pruebas.sql
 ```
 
-> La estructura se actualizará progresivamente a medida que avance el proyecto.
 
 ---
 
@@ -110,7 +117,11 @@ La documentación del proyecto se encuentra en la carpeta [`docs`](./docs).
 
 Documento que describe la situación problema seleccionada, su contexto, objetivo y alcance.
 
-[Consultar caso de estudio](./docs/CasoDeEstudio.pdf)
+[Consultar caso de estudio](./docs/CasoDeEstudio.pdf) · [Ajustes de la Entrega 3 (HU21 a HU23 y reportes)](./docs/caso_estudio_ajustes_entrega3.md)
+
+## Enunciado
+
+[Enunciado de la Entrega 3](./docs/enunciado/enunciado_entrega3.txt)
 
 ## Reportes y decisiones de implementación
 
@@ -126,7 +137,7 @@ Cómo crear, probar y limpiar la base de datos desde SQL Developer.
 
 ## Evidencia de ejecución
 
-Salida real de la creación de la base, las 24 pruebas y los 7 reportes en Oracle 11g XE.
+Salida real de la creación de la base, las pruebas y los 7 reportes en Oracle 11g XE.
 
 [Consultar evidencia](./docs/evidencias/ejecucion_oracle11g.txt)
 
@@ -172,15 +183,15 @@ El Modelo Entidad-Relación representa conceptualmente la información del caso 
 
 El modelo fue desarrollado utilizando **Oracle SQL Developer Data Modeler**.
 
-[Consultar MER (PDF)](./model/conceptual/MERentrega2rumbea.pdf) · [Carpeta y fuentes](./model/conceptual/)
+[Consultar MER (PDF)](./model/conceptual/MERentrega3rumbea.pdf) · [Retroalimentación](./model/conceptual/Equipo19_retroalimentacion.pdf) · [Carpeta y fuentes](./model/conceptual/)
 
 ## Modelo Relacional
 
 El Modelo Relacional corresponde a la transformación del modelo conceptual y representa las relaciones, atributos, claves primarias, claves foráneas y demás restricciones necesarias para la implementación de la base de datos.
 
-El modelo será normalizado hasta **Tercera Forma Normal (3FN)**.
+El modelo está normalizado hasta **Tercera Forma Normal (3FN)**, con una excepción justificada: `BRANCH_EVENTS` conserva `ESTABLISHMENT_id` para garantizar con FK que la sede y el evento sean del mismo establecimiento (ver la normalización).
 
-[Consultar MR (PDF)](./model/relacional/MERentrega2rumbeaCorregido.pdf) · [Normalización](./model/relacional/DFNormYRelaciones.pdf) · [Carpeta y fuentes](./model/relacional/)
+[Consultar MR (PDF)](./model/relacional/MRentrega3rumbea.pdf) · [Normalización (PDF)](./model/relacional/DFNormYRelaciones_entrega3.pdf) · [Normalización (Markdown)](./docs/normalizacion_entrega3.md) · [Correcciones del profesor](./model/relacional/Rumbea_correcciones_MR.pdf) · [Carpeta y fuentes](./model/relacional/)
 
 ---
 
@@ -368,8 +379,8 @@ git push origin main
 | DML                     | Probado en Oracle 11g XE               |
 | DQL                     | Probado en Oracle 11g XE               |
 | PL/SQL                  | Probado en Oracle 11g XE               |
-| Riesgos de IAg          | Escrito, pendiente de revisión del equipo |
-| Documentación final     | En proceso                    |
+| Riesgos de IAg          | Completado                    |
+| Documentación final     | Completado                    |
 
 ---
 
