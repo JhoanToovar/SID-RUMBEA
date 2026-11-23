@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Arc class="oracle.dbtools.crest.model.design.logical.Arc" directorySegmentName="seg_0" id="9C2D3353-FEB0-2AE7-E4C3-4C43BBD75F80" name="BRANCH_UPDATES_CK_1">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:23:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="F75DE89D-5D55-020C-8740-0A853F8B18B0" value="true"/>
+</engineerTo>
+<entity>E92E105D-A54E-751B-A4BA-9A2E17E62423</entity>
+<relations>
+<relationID>192A1039-0958-A6E0-278D-65821BA4FF2F</relationID>
+<relationID>E5E3AD15-3376-F112-0ADF-C36AA8AC19F4</relationID>
+</relations>
+</Arc>

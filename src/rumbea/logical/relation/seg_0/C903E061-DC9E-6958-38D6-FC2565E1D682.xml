@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="REVIEW_BRANCH_FK" directorySegmentName="seg_0" id="C903E061-DC9E-6958-38D6-FC2565E1D682">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:23:30 UTC</createdTime>
+<generatorID>DF9760D0-F41E-BBB6-B748-44AE1C10F3B8</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="F75DE89D-5D55-020C-8740-0A853F8B18B0" value="true"/>
+</engineerTo>
+<sourcePk>E87AE6A1-0649-D1F6-FA75-7B8C42FA3A2F</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>79BF4553-F8E1-5D99-3D22-67F36FE463EC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C42022DF-DE66-1C93-FDD6-4D0A4713CD72</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

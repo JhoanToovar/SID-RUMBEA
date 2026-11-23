@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="REMINDER_CLIENT_FK" directorySegmentName="seg_0" id="EF4EF7FD-59BA-5384-272D-0B234A6E33C3">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>EF2733C8-0DCC-6E2F-0450-C875D2063071</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<sourcePk>F84804A4-3553-9CF6-51A8-2273B0F6B98B</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DC1DB4D3-875D-2847-F9CD-FAC25129775F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>251856C0-C7E2-C59F-C7F4-7275BDF8591C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="BRANCH_ESTABLISHMENT_FK" directorySegmentName="seg_0" id="CBF60353-0EB0-6CD5-E42C-D985E67019F5">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:23:30 UTC</createdTime>
+<generatorID>17FD400B-F373-2404-6227-1374E5E8C1AD</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="F75DE89D-5D55-020C-8740-0A853F8B18B0" value="true"/>
+</engineerTo>
+<sourcePk>AD62908C-4206-BFA0-8932-AB580B98FC93</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>068C87E5-E60A-9A90-4E69-CDA6FEA7050E</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>79BF4553-F8E1-5D99-3D22-67F36FE463EC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

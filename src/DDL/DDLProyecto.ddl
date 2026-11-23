@@ -1,0 +1,700 @@
+-- Generado por Oracle SQL Developer Data Modeler 24.3.1.351.0831
+--   en:        2026-11-21 22:30:19 COT
+--   sitio:      Oracle Database 11g
+--   tipo:      Oracle Database 11g
+--
+-- Revision final Entrega 3 (22/11/2026): este archivo se ajusto a mano para que
+-- coincida con src/DDL/rumbea_ddl.sql. Cambios, marcados con [E3] y [E3-R]:
+--   * CHECK de negocio de aforo, cover, cover especial y calificacion
+--   * UNIQUE de BRANCH_TYPES (BRANCH_id) y de BRANCH_SCHEDULES (BRANCH_id, dayOfWeek)
+--   * CHECK de ADMINS.stateActive
+--   * VISIT_PROFILES con PK propia (id) e interactionSeconds
+--   * nueva tabla CLIENT_EVENT_REMINDERS
+-- Al actualizar el modelo en Data Modeler, volver a exportar y comparar.
+
+
+
+-- predefined type, no DDL - MDSYS.SDO_GEOMETRY
+
+-- predefined type, no DDL - XMLTYPE
+
+CREATE TABLE ADMINS 
+    ( 
+     id                 VARCHAR2 (10 CHAR)  NOT NULL , 
+     stateActive        VARCHAR2 (20 CHAR)  NOT NULL , 
+     lastConnectionDate DATE  NOT NULL , 
+     BRANCH_id          VARCHAR2 (10 CHAR)  NOT NULL , 
+     role               VARCHAR2 (20 CHAR) DEFAULT 'ADMIN'  NOT NULL 
+    ) 
+;
+
+ALTER TABLE ADMINS 
+    ADD CONSTRAINT ADMINS_CK_1 
+    CHECK (role = 'ADMIN')
+;
+ALTER TABLE ADMINS 
+    ADD CONSTRAINT ADMIN_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE ADMINS 
+    ADD CONSTRAINT ADMINS__UN UNIQUE ( BRANCH_id ) ;
+
+-- [E3-R]
+ALTER TABLE ADMINS 
+    ADD CONSTRAINT ADMINS_STATE_CK 
+    CHECK (stateActive IN ('ACTIVO','INACTIVO'))
+;
+
+CREATE TABLE BRANCH_EVENTS 
+    ( 
+     BRANCH_id        VARCHAR2 (10 CHAR)  NOT NULL , 
+     EVENT_id         VARCHAR2 (10 CHAR)  NOT NULL , 
+     ESTABLISHMENT_id VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE BRANCH_EVENTS 
+    ADD CONSTRAINT BRANCH_EVENT_PK PRIMARY KEY ( BRANCH_id, EVENT_id ) ;
+
+CREATE TABLE BRANCH_MUSIC_GENRES 
+    ( 
+     BRANCH_id      VARCHAR2 (10 CHAR)  NOT NULL , 
+     MUSIC_GENRE_id VARCHAR2 (10)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE BRANCH_MUSIC_GENRES 
+    ADD CONSTRAINT BRANCH_MUSIC_GENRE_PK PRIMARY KEY ( BRANCH_id, MUSIC_GENRE_id ) ;
+
+CREATE TABLE BRANCH_SCHEDULES 
+    ( 
+     id        VARCHAR2 (10)  NOT NULL , 
+     dayOfWeek VARCHAR2 (10)  NOT NULL , 
+     openTime  VARCHAR2 (10)  NOT NULL , 
+     closeTime VARCHAR2 (10)  NOT NULL , 
+     BRANCH_id VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE BRANCH_SCHEDULES 
+    ADD CONSTRAINT BRANCH_SCHEDULE_PK PRIMARY KEY ( id ) ;
+
+-- [E3]
+ALTER TABLE BRANCH_SCHEDULES 
+    ADD CONSTRAINT BRANCH_SCHEDULES_DAY_UN UNIQUE ( BRANCH_id , dayOfWeek ) ;
+
+CREATE TABLE BRANCH_TYPES 
+    ( 
+     id        VARCHAR2 (10 CHAR)  NOT NULL , 
+     type      VARCHAR2 (50)  NOT NULL , 
+     BRANCH_id VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE BRANCH_TYPES 
+    ADD CONSTRAINT BRANCH_TYPE_PK PRIMARY KEY ( id ) ;
+
+-- [E3]
+ALTER TABLE BRANCH_TYPES 
+    ADD CONSTRAINT BRANCH_TYPES__UN UNIQUE ( BRANCH_id ) ;
+
+CREATE TABLE BRANCH_UPDATES 
+    ( 
+     id                     VARCHAR2 (10 CHAR)  NOT NULL , 
+     "date"                 DATE  NOT NULL , 
+     newCapacity            NUMBER (8) , 
+     newCover               NUMBER (10,2) , 
+     BRANCH_id              VARCHAR2 (10 CHAR)  NOT NULL , 
+     newDescription         VARCHAR2 (500) , 
+     newLocation            VARCHAR2 (255) , 
+     ADMIN_id               VARCHAR2 (10 CHAR) , 
+     ESTABLISHMENT_OWNER_id VARCHAR2 (10 CHAR) 
+    ) 
+;
+
+ALTER TABLE BRANCH_UPDATES 
+    ADD CONSTRAINT BRANCH_UPDATES_CK_1 
+    CHECK ((ADMIN_id IS NOT NULL AND ESTABLISHMENT_OWNER_id IS NULL) OR (ADMIN_id IS NULL AND ESTABLISHMENT_OWNER_id IS NOT NULL))
+;
+ALTER TABLE BRANCH_UPDATES 
+    ADD CONSTRAINT BRANCH_UPDATE_PK PRIMARY KEY ( id ) ;
+
+-- [E3]
+ALTER TABLE BRANCH_UPDATES 
+    ADD CONSTRAINT BRANCH_UPDATES_CAPACITY_CK 
+    CHECK (newCapacity >= 0)
+;
+ALTER TABLE BRANCH_UPDATES 
+    ADD CONSTRAINT BRANCH_UPDATES_COVER_CK 
+    CHECK (newCover >= 0)
+;
+
+CREATE TABLE BRANCHS 
+    ( 
+     id               VARCHAR2 (10 CHAR)  NOT NULL , 
+     suffix           VARCHAR2 (100) , 
+     location         VARCHAR2 (255)  NOT NULL , 
+     description      VARCHAR2 (500)  NOT NULL , 
+     capacity         NUMBER (8)  NOT NULL , 
+     cover            NUMBER (10,2)  NOT NULL , 
+     ESTABLISHMENT_id VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE BRANCHS 
+    ADD CONSTRAINT BRANCH_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE BRANCHS 
+    ADD CONSTRAINT BRANCHS__UN UNIQUE ( id , ESTABLISHMENT_id ) ;
+
+-- [E3]
+ALTER TABLE BRANCHS 
+    ADD CONSTRAINT BRANCHS_CAPACITY_CK 
+    CHECK (capacity >= 0)
+;
+ALTER TABLE BRANCHS 
+    ADD CONSTRAINT BRANCHS_COVER_CK 
+    CHECK (cover >= 0)
+;
+
+CREATE TABLE CLIENT_MUSIC_PREFERENCES 
+    ( 
+     MUSIC_GENRE_id VARCHAR2 (10)  NOT NULL , 
+     CLIENT_id      VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE CLIENT_MUSIC_PREFERENCES 
+    ADD CONSTRAINT CLIENT_MUSIC_PREFERENCE_PK PRIMARY KEY ( CLIENT_id, MUSIC_GENRE_id ) ;
+
+-- [E3-R]
+CREATE TABLE CLIENT_EVENT_REMINDERS 
+    ( 
+     CLIENT_id    VARCHAR2 (10 CHAR)  NOT NULL , 
+     EVENT_id     VARCHAR2 (10 CHAR)  NOT NULL , 
+     reminderDate DATE  NOT NULL 
+    ) 
+;
+
+ALTER TABLE CLIENT_EVENT_REMINDERS 
+    ADD CONSTRAINT CLIENT_EVENT_REMINDER_PK PRIMARY KEY ( CLIENT_id, EVENT_id ) ;
+
+CREATE TABLE CLIENTS 
+    ( 
+     id   VARCHAR2 (10 CHAR)  NOT NULL , 
+     role VARCHAR2 (20 CHAR) DEFAULT 'CLIENT'  NOT NULL 
+    ) 
+;
+
+ALTER TABLE CLIENTS 
+    ADD CONSTRAINT CLIENTS_CK_1 
+    CHECK (role = 'CLIENT')
+;
+ALTER TABLE CLIENTS 
+    ADD CONSTRAINT CLIENT_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE ESTABLISHMENT_OWNERS 
+    ( 
+     id   VARCHAR2 (10 CHAR)  NOT NULL , 
+     role VARCHAR2 (20 CHAR) DEFAULT 'OWNER'  NOT NULL 
+    ) 
+;
+
+ALTER TABLE ESTABLISHMENT_OWNERS 
+    ADD CONSTRAINT ESTABLISHMENT_OWNERS_CK_1 
+    CHECK (role = 'OWNER')
+;
+ALTER TABLE ESTABLISHMENT_OWNERS 
+    ADD CONSTRAINT ESTABLISHMENT_OWNER_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE ESTABLISHMENTS 
+    ( 
+     id                     VARCHAR2 (10 CHAR)  NOT NULL , 
+     name                   VARCHAR2 (100)  NOT NULL , 
+     ESTABLISHMENT_OWNER_id VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE ESTABLISHMENTS 
+    ADD CONSTRAINT ESTABLISHMENT_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE EVENTS 
+    ( 
+     id               VARCHAR2 (10 CHAR)  NOT NULL , 
+     name             VARCHAR2 (100)  NOT NULL , 
+     realizationDate  DATE  NOT NULL , 
+     description      VARCHAR2 (500)  NOT NULL , 
+     specialCover     NUMBER (10,2) , 
+     ESTABLISHMENT_id VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE EVENTS 
+    ADD CONSTRAINT EVENT_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE EVENTS 
+    ADD CONSTRAINT EVENTS__UN UNIQUE ( id , ESTABLISHMENT_id ) ;
+
+-- [E3]
+ALTER TABLE EVENTS 
+    ADD CONSTRAINT EVENTS_SPECIAL_COVER_CK 
+    CHECK (specialCover >= 0)
+;
+
+CREATE TABLE FAVORITES 
+    ( 
+     assignmentDate DATE  NOT NULL , 
+     BRANCH_id      VARCHAR2 (10 CHAR)  NOT NULL , 
+     CLIENT_id      VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE FAVORITES 
+    ADD CONSTRAINT FAVORITE_PK PRIMARY KEY ( CLIENT_id, BRANCH_id ) ;
+
+CREATE TABLE LINK_OF_INTERESTS 
+    ( 
+     id        VARCHAR2 (10 CHAR)  NOT NULL , 
+     name      VARCHAR2 (100)  NOT NULL , 
+     link      VARCHAR2 (500)  NOT NULL , 
+     BRANCH_id VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE LINK_OF_INTERESTS 
+    ADD CONSTRAINT LINK_OF_INTEREST_PK PRIMARY KEY ( id ) ;
+
+CREATE TABLE MUSIC_GENRES 
+    ( 
+     id   VARCHAR2 (10)  NOT NULL , 
+     name VARCHAR2 (100)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE MUSIC_GENRES 
+    ADD CONSTRAINT MUSIC_GENRE_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE MUSIC_GENRES 
+    ADD CONSTRAINT MUSIC_GENRE_name_UN UNIQUE ( name ) ;
+
+CREATE TABLE REVIEWS 
+    ( 
+     id        VARCHAR2 (10)  NOT NULL , 
+     text      VARCHAR2 (200)  NOT NULL , 
+     rating    NUMBER (1)  NOT NULL , 
+     "date"    DATE  NOT NULL , 
+     BRANCH_id VARCHAR2 (10 CHAR)  NOT NULL , 
+     CLIENT_id VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE REVIEWS 
+    ADD CONSTRAINT REVIEW_PK PRIMARY KEY ( id ) ;
+
+-- [E3]
+ALTER TABLE REVIEWS 
+    ADD CONSTRAINT REVIEWS_RATING_CK 
+    CHECK (rating BETWEEN 1 AND 5)
+;
+
+CREATE TABLE USERS 
+    ( 
+     id           VARCHAR2 (10 CHAR)  NOT NULL , 
+     name         VARCHAR2 (100 CHAR)  NOT NULL , 
+     email        VARCHAR2 (100 CHAR)  NOT NULL , 
+     password     VARCHAR2 (50 CHAR)  NOT NULL , 
+     phoneNumber  VARCHAR2 (10 CHAR) , 
+     creationDate DATE  NOT NULL , 
+     role         VARCHAR2 (20 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE USERS 
+    ADD CONSTRAINT USERS_CK_1 
+    CHECK (role IN ('ADMIN','CLIENT','OWNER'))
+;
+ALTER TABLE USERS 
+    ADD CONSTRAINT USER_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE USERS 
+    ADD CONSTRAINT USER_email_UN UNIQUE ( email ) ;
+
+ALTER TABLE USERS 
+    ADD CONSTRAINT USERS_ID_ROLE_UN UNIQUE ( id , role ) ;
+
+-- [E3-R] PK propia y tiempo de interaccion
+CREATE TABLE VISIT_PROFILES 
+    ( 
+     id                 VARCHAR2 (10 CHAR)  NOT NULL , 
+     visitDate          DATE  NOT NULL , 
+     visitTimeIn        INTEGER  NOT NULL , 
+     interactionSeconds NUMBER (6)  NOT NULL , 
+     CLIENT_id          VARCHAR2 (10 CHAR)  NOT NULL , 
+     BRANCH_id          VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE VISIT_PROFILES 
+    ADD CONSTRAINT VISIT_PROFILE_PK PRIMARY KEY ( id ) ;
+
+ALTER TABLE VISIT_PROFILES 
+    ADD CONSTRAINT VISIT_PROFILES_TIME_CK 
+    CHECK (visitTimeIn BETWEEN 0 AND 2359 AND MOD(visitTimeIn, 100) < 60)
+;
+ALTER TABLE VISIT_PROFILES 
+    ADD CONSTRAINT VISIT_PROFILES_SECONDS_CK 
+    CHECK (interactionSeconds > 0)
+;
+
+ALTER TABLE ADMINS 
+    ADD CONSTRAINT ADMIN_BRANCH_FK FOREIGN KEY 
+    ( 
+     BRANCH_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE ADMINS 
+    ADD CONSTRAINT ADMIN_USER_FK FOREIGN KEY 
+    ( 
+     id,
+     role
+    ) 
+    REFERENCES USERS 
+    ( 
+     id,
+     role
+    ) 
+;
+
+ALTER TABLE BRANCHS 
+    ADD CONSTRAINT BRANCH_ESTABLISHMENT_FK FOREIGN KEY 
+    ( 
+     ESTABLISHMENT_id
+    ) 
+    REFERENCES ESTABLISHMENTS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE BRANCH_EVENTS 
+    ADD CONSTRAINT BRANCH_EVENT_BRANCH_FK FOREIGN KEY 
+    ( 
+     BRANCH_id,
+     ESTABLISHMENT_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id,
+     ESTABLISHMENT_id
+    ) 
+;
+
+ALTER TABLE BRANCH_EVENTS 
+    ADD CONSTRAINT BRANCH_EVENT_EVENT_FK FOREIGN KEY 
+    ( 
+     EVENT_id,
+     ESTABLISHMENT_id
+    ) 
+    REFERENCES EVENTS 
+    ( 
+     id,
+     ESTABLISHMENT_id
+    ) 
+;
+
+ALTER TABLE BRANCH_MUSIC_GENRES 
+    ADD CONSTRAINT BRANCH_MUSIC_GENRE_BRANCH_FK FOREIGN KEY 
+    ( 
+     BRANCH_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE BRANCH_MUSIC_GENRES 
+    ADD CONSTRAINT BRANCH_MUSIC_GENRE_GENRE_FK FOREIGN KEY 
+    ( 
+     MUSIC_GENRE_id
+    ) 
+    REFERENCES MUSIC_GENRES 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE BRANCH_SCHEDULES 
+    ADD CONSTRAINT BRANCH_SCHEDULE_BRANCH_FK FOREIGN KEY 
+    ( 
+     BRANCH_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE BRANCH_TYPES 
+    ADD CONSTRAINT BRANCH_TYPES_BRANCHS_FK FOREIGN KEY 
+    ( 
+     BRANCH_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE BRANCH_UPDATES 
+    ADD CONSTRAINT BRANCH_UPDATE_ADMIN_FK FOREIGN KEY 
+    ( 
+     ADMIN_id
+    ) 
+    REFERENCES ADMINS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE BRANCH_UPDATES 
+    ADD CONSTRAINT BRANCH_UPDATE_BRANCH_FK FOREIGN KEY 
+    ( 
+     BRANCH_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE BRANCH_UPDATES 
+    ADD CONSTRAINT BRANCH_UPDATE_OWNER_FK FOREIGN KEY 
+    ( 
+     ESTABLISHMENT_OWNER_id
+    ) 
+    REFERENCES ESTABLISHMENT_OWNERS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE CLIENT_MUSIC_PREFERENCES 
+    ADD CONSTRAINT CLIENT_MUSIC_PREF_CLIENT_FK FOREIGN KEY 
+    ( 
+     CLIENT_id
+    ) 
+    REFERENCES CLIENTS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE CLIENT_MUSIC_PREFERENCES 
+    ADD CONSTRAINT CLIENT_MUSIC_PREF_GENRE_FK FOREIGN KEY 
+    ( 
+     MUSIC_GENRE_id
+    ) 
+    REFERENCES MUSIC_GENRES 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE CLIENTS 
+    ADD CONSTRAINT CLIENT_USER_FK FOREIGN KEY 
+    ( 
+     id,
+     role
+    ) 
+    REFERENCES USERS 
+    ( 
+     id,
+     role
+    ) 
+;
+
+-- [E3-R]
+ALTER TABLE CLIENT_EVENT_REMINDERS 
+    ADD CONSTRAINT REMINDER_CLIENT_FK FOREIGN KEY 
+    ( 
+     CLIENT_id
+    ) 
+    REFERENCES CLIENTS 
+    ( 
+     id
+    ) 
+;
+
+-- [E3-R]
+ALTER TABLE CLIENT_EVENT_REMINDERS 
+    ADD CONSTRAINT REMINDER_EVENT_FK FOREIGN KEY 
+    ( 
+     EVENT_id
+    ) 
+    REFERENCES EVENTS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE ESTABLISHMENTS 
+    ADD CONSTRAINT ESTABLISHMENT_OWNER_FK FOREIGN KEY 
+    ( 
+     ESTABLISHMENT_OWNER_id
+    ) 
+    REFERENCES ESTABLISHMENT_OWNERS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE ESTABLISHMENT_OWNERS 
+    ADD CONSTRAINT ESTABLISHMENT_OWNER_USER_FK FOREIGN KEY 
+    ( 
+     id,
+     role
+    ) 
+    REFERENCES USERS 
+    ( 
+     id,
+     role
+    ) 
+;
+
+ALTER TABLE EVENTS 
+    ADD CONSTRAINT EVENTS_ESTABLISHMENTS_FK FOREIGN KEY 
+    ( 
+     ESTABLISHMENT_id
+    ) 
+    REFERENCES ESTABLISHMENTS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE FAVORITES 
+    ADD CONSTRAINT FAVORITE_BRANCH_FK FOREIGN KEY 
+    ( 
+     BRANCH_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE FAVORITES 
+    ADD CONSTRAINT FAVORITE_CLIENT_FK FOREIGN KEY 
+    ( 
+     CLIENT_id
+    ) 
+    REFERENCES CLIENTS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE LINK_OF_INTERESTS 
+    ADD CONSTRAINT LINK_OF_INTEREST_BRANCH_FK FOREIGN KEY 
+    ( 
+     BRANCH_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE REVIEWS 
+    ADD CONSTRAINT REVIEW_BRANCH_FK FOREIGN KEY 
+    ( 
+     BRANCH_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE REVIEWS 
+    ADD CONSTRAINT REVIEW_CLIENT_FK FOREIGN KEY 
+    ( 
+     CLIENT_id
+    ) 
+    REFERENCES CLIENTS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE VISIT_PROFILES 
+    ADD CONSTRAINT VISIT_PROFILE_BRANCH_FK FOREIGN KEY 
+    ( 
+     BRANCH_id
+    ) 
+    REFERENCES BRANCHS 
+    ( 
+     id
+    ) 
+;
+
+ALTER TABLE VISIT_PROFILES 
+    ADD CONSTRAINT VISIT_PROFILE_CLIENT_FK FOREIGN KEY 
+    ( 
+     CLIENT_id
+    ) 
+    REFERENCES CLIENTS 
+    ( 
+     id
+    ) 
+;
+
+
+
+-- Informe de Resumen de Oracle SQL Developer Data Modeler: 
+-- 
+-- CREATE TABLE                            19
+-- CREATE INDEX                             0
+-- ALTER TABLE                             68
+-- CREATE VIEW                              0
+-- ALTER VIEW                               0
+-- CREATE PACKAGE                           0
+-- CREATE PACKAGE BODY                      0
+-- CREATE PROCEDURE                         0
+-- CREATE FUNCTION                          0
+-- CREATE TRIGGER                           0
+-- ALTER TRIGGER                            0
+-- CREATE COLLECTION TYPE                   0
+-- CREATE STRUCTURED TYPE                   0
+-- CREATE STRUCTURED TYPE BODY              0
+-- CREATE CLUSTER                           0
+-- CREATE CONTEXT                           0
+-- CREATE DATABASE                          0
+-- CREATE DIMENSION                         0
+-- CREATE DIRECTORY                         0
+-- CREATE DISK GROUP                        0
+-- CREATE ROLE                              0
+-- CREATE ROLLBACK SEGMENT                  0
+-- CREATE SEQUENCE                          0
+-- CREATE MATERIALIZED VIEW                 0
+-- CREATE MATERIALIZED VIEW LOG             0
+-- CREATE SYNONYM                           0
+-- CREATE TABLESPACE                        0
+-- CREATE USER                              0
+-- 
+-- DROP TABLESPACE                          0
+-- DROP DATABASE                            0
+-- 
+-- REDACTION POLICY                         0
+-- 
+-- ORDS DROP SCHEMA                         0
+-- ORDS ENABLE SCHEMA                       0
+-- ORDS ENABLE OBJECT                       0
+-- 
+-- ERRORS                                   0
+-- WARNINGS                                 0

@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9D04787F-1E58-49E5-16C5-8EC278412E99" name="FAVORITES">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>524014BF-956D-6561-72C8-B5AF38F8FBEB</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="assignmentDate" id="F711F3F0-3B62-5C83-0757-B51597022C27">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>0BCADDE2-F47A-32EA-79CB-C2F9ACCB9FA0</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>051C59B0-DF21-9DEC-1480-7EC14028A611</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BRANCH_id" id="53EDD73F-EC77-258D-4FAC-A25A31869472">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>1914A4C7-A743-3DFF-3427-E63B6D22BC14</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="69D75643-B7ED-2C83-4FCC-6C86CE9206B9" referredColumn="DF904EBD-7083-FB1F-A28A-ED7AF9D1A553"/>
+</associations>
+</Column>
+<Column name="CLIENT_id" id="AB4F1185-8758-71F9-2BA1-2E7352D8634F">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>72824198-D460-2664-0581-FFEB1DC5EBC9</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DBD4D0EC-F62E-B1CC-B922-385DFEDAF988</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="658CD6AB-B986-F9AD-F50E-AE1B6432C677" referredColumn="90A1BF4F-54FB-DA5D-57F3-086C3FDF6CD8"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9E3974A6-6162-F7B4-D504-1F11E3ABA7DB" name="FAVORITE_PK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>C0B96152-9421-5C2B-181B-AFB6D7C521D9</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB4F1185-8758-71F9-2BA1-2E7352D8634F"/>
+<colUsage columnID="53EDD73F-EC77-258D-4FAC-A25A31869472"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D9C8CA73-7CA5-5F07-A0C2-4BDE45DD978D" name="FAVORITE_BRANCH_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="53EDD73F-EC77-258D-4FAC-A25A31869472"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D88762F7-DB08-2AE8-5799-975A1F775F6C" name="FAVORITE_CLIENT_FK">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AB4F1185-8758-71F9-2BA1-2E7352D8634F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

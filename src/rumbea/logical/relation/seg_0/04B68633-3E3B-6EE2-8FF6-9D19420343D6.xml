@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="BRANCH_EVENT_BRANCH_FK" directorySegmentName="seg_0" id="04B68633-3E3B-6EE2-8FF6-9D19420343D6">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:44:25 UTC</createdTime>
+<generatorID>36BCEAFF-FF17-4DE9-0DE0-7785695DCB06</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="8A8E8097-F32F-97C6-C171-FC2683929F1F" value="true"/>
+</engineerTo>
+<sourcePk>63B34912-FFB6-FA9A-9156-6E89DE615305</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>0968F442-41D2-7313-1F21-823C7F3AF04A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9907F6DC-211C-640B-1543-CED1AA7E1341</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

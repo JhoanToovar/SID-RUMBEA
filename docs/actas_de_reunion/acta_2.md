@@ -6,7 +6,7 @@
 | ------------------- | -------------------------------------- |
 | **Proyecto**        | SID-RUMBEA                             |
 | **Reunión**         | Definición de la jerarquía de usuarios |
-| **Fecha**           | Martes 2 de septiembre de 2026         |
+| **Fecha**           | Miércoles 2 de septiembre de 2026      |
 | **Hora**            | 9:30 a. m.                             |
 | **Lugar**           | CAMBAS, Universidad Icesi              |
 | **Asistentes**      | Jhoan, Juan Pablo                      |

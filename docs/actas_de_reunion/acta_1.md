@@ -6,7 +6,7 @@
 | ------------------- | ----------------------------------- |
 | **Proyecto**        | SID-RUMBEA                          |
 | **Reunión**         | Replanteamiento del caso de estudio |
-| **Fecha**           | Jueves 28 de agosto de 2026         |
+| **Fecha**           | Viernes 28 de agosto de 2026        |
 | **Hora**            | 9:00 a. m.                          |
 | **Lugar**           | CAMBAS, Universidad Icesi           |
 | **Asistentes**      | Jhoan, Juan Pablo                   |

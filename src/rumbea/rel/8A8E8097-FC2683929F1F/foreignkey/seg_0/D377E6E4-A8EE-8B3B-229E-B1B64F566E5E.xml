@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D377E6E4-A8EE-8B3B-229E-B1B64F566E5E" containerWithKeyObject="8BF1343C-5A60-3EF3-9403-B98D5A345134" localFKIndex="822A2D33-6770-16D6-2622-FE3F33CA0914" name="BRANCH_MUSIC_GENRE_BRANCH_FK">
+<sourceDDLFile>DDLProyecto.ddl</sourceDDLFile>
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 18:38:30 UTC</createdTime>
+<ownerDesignName>rumbea</ownerDesignName>
+<importedID>93E98991-CEE3-18A3-2007-63F7AD7C93DB</importedID>
+<referredTableLongName>BRANCHS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C955F6B6-6C9F-C657-A8E0-82822236CB90</referredTableID>
+<keyObject>39496A8C-0AA6-CE88-B667-FBB421A426F8</keyObject>
+<referredKeyID>39496A8C-0AA6-CE88-B667-FBB421A426F8</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

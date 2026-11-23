@@ -5,4 +5,15 @@
 <ownerDesignName>rumbea</ownerDesignName>
 <capitalNames>false</capitalNames>
 <designId>0C2410FE-EC80-643F-2758-B3D829521AAE</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="16F5C194-22E2-3646-0080-05113EAF74E7">
+<designStoragePath>D:\DDLProyecto</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="0C13609C-DE04-217E-E6F5-078488A32BF8">
+<designStoragePath>D:\DDLProyecto</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="A310429C-6407-8FEC-CFD3-EB7599F525AE">
+<designStoragePath>D:\DDLProyecto</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
 </OSDM_Design>

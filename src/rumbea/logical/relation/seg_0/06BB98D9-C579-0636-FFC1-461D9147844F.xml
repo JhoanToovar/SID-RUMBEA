@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CLIENT_MUSIC_PREF_CLIENT_FK" directorySegmentName="seg_0" id="06BB98D9-C579-0636-FFC1-461D9147844F">
+<createdBy>Pc</createdBy>
+<createdTime>2026-11-22 17:23:30 UTC</createdTime>
+<generatorID>09C67730-430C-2967-53A3-1B484666004B</generatorID>
+<ownerDesignName>rumbea</ownerDesignName>
+<engineerTo>
+<item key="F75DE89D-5D55-020C-8740-0A853F8B18B0" value="true"/>
+</engineerTo>
+<sourcePk>BD019523-0265-EC3A-A6ED-5C9E33260892</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1F068C44-129F-FF5F-163E-ADF11479AF43</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8BE8BB43-ECDE-A1FF-CF1C-5F376968D1AD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
