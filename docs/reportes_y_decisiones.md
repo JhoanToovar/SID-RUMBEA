@@ -30,7 +30,7 @@ En la primera versión de la Entrega 3 se decidió no cambiar el modelo, y eso d
 
 1. **"Recordar evento" ahora se guarda (R2).** La nueva tabla `CLIENT_EVENT_REMINDERS (CLIENT_id, EVENT_id, reminderDate)` registra qué cliente activó el recordatorio de cada evento. Q4 cuenta recordatorios reales y ya no es una aproximación por favoritos.
 2. **El historial de accesos es completo (R1).** `VISIT_PROFILES` tiene PK propia (`id`), así que un cliente puede visitar el perfil de una sede muchas veces, y guarda `interactionSeconds`, el tiempo de interacción que pidió el profesor en la retroalimentación del MER. Q1 muestra accesos, clientes distintos y tiempo promedio por día.
-3. **No se sabe cuál género predomina (R3).** Esto se mantiene: Q6 filtra por género asociado a la sede, como dice la HU12.
+3. **Alcance del filtro por género (R3).** Q6 cumple la HU12 vigente al filtrar por tipo y por cualquier género musical asociado a la sede. El modelo carece de un dato que identifique el género predominante, por lo que el requisito original de R3 se cumple parcialmente si se evalúa según la formulación de la Entrega 0.
 
 Los ajustes al caso de estudio (HU21 a HU23 y los reportes) están en el [caso de estudio](./CasoDeEstudio.pdf), y la normalización actualizada en [normalización Entrega 3](./normalizacion_entrega3.md).
 
